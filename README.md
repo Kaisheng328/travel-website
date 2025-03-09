@@ -15,7 +15,7 @@ git branch
 if it show `main` branch. Remember to follow Step 3 for creating own branch.
 if it show multiple branch like  (`main`, `kaisheng-plan`, `kaisheng-blog`), perform command below to switch to branch u want to work with. Never Work at MAIN BRANCH !!!
 ```bash
-git branch kaisheng-plan
+git switch kaisheng-plan
 ```
 
 ## Step 3: Create Your Own Branch
