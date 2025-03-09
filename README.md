@@ -21,6 +21,7 @@ git branch kaisheng-plan
 ## Step 3: Create Your Own Branch
 Never work directly on the `main` branch. Instead, create a new branch for your changes.
 ```bash
+git branch your-branch-name
 git checkout -b your-branch-name
 ```
 Use a meaningful branch name that describes your work (e.g., `feature-login-page` or `bugfix-dashboard`).
