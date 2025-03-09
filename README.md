@@ -49,7 +49,7 @@ git push origin your-branch-name
 ## Step 7: Wait for Review & Merging
 The repository owner will review your pull request. If needed, they may request changes before merging. Once approved, your changes will be merged into `main`.
 
-#Guide for running website
+# Guide for running website
 Right Click on mainpage.html, Click open with Live Server
 
 
