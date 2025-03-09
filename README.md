@@ -3,7 +3,7 @@
 ## Step 1: Clone the Repository
 Before making any changes, clone the repository to your local machine.
 ```bash
-git clone https://github.com/yourusername/repository.git
+git clone https://github.com/Kaisheng328/travel-website.git
 cd repository
 ```
 ## Step 2: Check Your Current Working Branch
