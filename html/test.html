@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll Test</title>
+    <style>
+        /* Container for horizontal scrolling */
+        .horizontal-scroll-menu {
+            overflow-x: auto; /* Enables horizontal scrolling */
+            overflow-y: hidden; /* Hides vertical overflow */
+            white-space: nowrap; /* Keeps items in a single line */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            background-color: #343a40; /* Background color for visibility */
+            padding: 10px 0; /* Padding for spacing */
+        }
+
+        /* Align items horizontally */
+        .horizontal-scroll-menu .navbar-nav {
+            display: inline-flex; /* Align items horizontally */
+            padding: 0; /* Removes default padding */
+            margin: 0; /* Removes default margin */
+        }
+
+        /* Style for nav items */
+        .horizontal-scroll-menu .nav-item {
+            display: inline-block; /* Ensures items are displayed inline */
+            margin: 0 10px; /* Space between items */
+        }
+
+        /* Style for nav links */
+        .horizontal-scroll-menu .nav-link {
+            color: #ffffff; /* Text color */
+            padding: 10px 15px; /* Padding for better spacing */
+            background-color: #007bff; /* Background color */
+            border-radius: 20px; /* Rounded corners */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Hide scrollbar on mobile (optional) */
+        .horizontal-scroll-menu::-webkit-scrollbar {
+            display: none; /* Hide scrollbar on WebKit browsers */
+        }
+    </style>
+</head>
+<body>
+    <div class="horizontal-scroll-menu">
+        <div class="navbar-nav">
+            <div class="nav-item"><a href="#" class="nav-link">Link 1</a></div>
+            <div class="nav-item"><a href="#" class="nav-link">Link 2</a></div>
+            <div class="nav-item"><a href="#" class="nav-link">Link 3</a></div>
+            <div class="nav-item"><a href="#" class="nav-link">Link 4</a></div>
+            <div class="nav-item"><a href="#" class="nav-link">Link 5</a></div>
+            <div class="nav-item"><a href="#" class="nav-link">Link 6</a></div>
+            <!-- Add more items if necessary -->
+        </div>
+    </div>
+</body>
+</html>

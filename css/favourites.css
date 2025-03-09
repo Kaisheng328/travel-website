@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--Quicksand);
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color: #b7f2f7; 
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #7d7d7d; 
+    color: white; 
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.back-to-top:hover {
+    opacity: 1.0; 
+    background-color: #242424;
+}
+.back-to-top i {
+    font-size: 24px; 
+}
+
+header .logo a {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #000000; 
+    text-decoration: none; 
+}
+
+
+
+header .scrollable-nav {
+    margin-left: auto; 
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 15px;
+    background-color: #b7f2f7; 
+    border-radius: 8px;
+}
+
+scrollable-nav::-webkit-scrollbar {
+    display: none; 
+}
+
+.scrollable-nav {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    overflow-y: hidden; 
+}
+
+.scrollable-nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.scrollable-nav li {
+    margin-right: 20px;
+}
+
+.scrollable-nav a {
+    color: #ffffff;
+    text-decoration: none; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+
+.scrollable-nav a:hover,
+.scrollable-nav a.active {
+    color: #ffffff !important;
+    background-color: #000000; 
+}
+
+.scrollable-nav .sign-in {
+    margin-left: auto;
+}
+
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* On mobile, stack logo and navbar vertically */
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        align-items: center; /* Center-align items */
+    }
+
+    .scrollable-nav {
+        margin-top: 10px; /* Space between logo and nav bar */
+        width: 100%; /* Full width for mobile devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .popular-activities h2 {
+        font-size: 1.5rem; /* Smaller heading font size */
+    }
+
+    .activity-card {
+        flex: 0 0 100%; /* Full width for mobile devices */
+        padding: 0 5px; /* Adjust padding for smaller screens */
+    }
+
+    .carousel-control {
+        font-size: 1.2rem; /* Smaller controls for very small screens */
+        padding: 5px; /* Adjust padding */
+    }
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+.favorites-section {
+    padding: 2rem;
+    background-color: #ffffff;
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+}
+
+.favorites-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.favorite-card {
+    width: 300px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Change cursor to pointer for clickable items */
+}
+
+.favorite-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.favorite-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth image zoom effect */
+}
+
+.favorite-card:hover .favorite-image {
+    transform: scale(1.05); /* Slight zoom effect on image hover */
+}
+
+.favorite-details {
+    padding: 1rem;
+    text-align: center; /* Center text for a cleaner look */
+}
+
+.ratings {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* General Button Styles */
+button {
+    background-color: #000000; 
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Remove Button Specific Styles */
+.remove-button {
+    background-color: #ffffff; 
+}
+
+.remove-button:hover {
+    background-color: #f20000;
+    transform: scale(1.05);
+}
+
+.remove-button:active {
+    background-color: #000000;
+}
+
+/* Optional: Add some spacing if there are multiple buttons */
+button + button {
+    margin-left: 10px;
+}
+
+/* Footer Styles */
+.footer {
+    padding: 20px 0;
+    background-color: #000000;
+}
+
+.footer .social-icons a {
+    color: #000000;
+    margin-right: 15px;
+    font-size: 2rem; /* Increased icon size */
+}
+
+.footer .social-icons a:hover {
+    color: #0804d4;
+}
+
+.footer .contact-info {
+    margin: 20px 0;
+}
+
+.hero-section {
+    position: relative;
+    height: 60vh;
+    background-image: url('https://www.gravelspringsltd.com/assets/uploads/opportunity_banner2023062927442824071688076644.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
+.about-content h2 {
+    color: #fbfbfb;
+    margin-bottom: 1.5rem;
+}
+
+.go-back-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background-color: #ffffff; 
+    color: #000000; 
+    border: none; 
+    border-radius: 25px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.go-back-btn:hover {
+    background-color: #ffffff; 
+    color: #000000; 
+}
+/* Featured Destinations Styles */
+.container {
+    padding: 20px;
+}

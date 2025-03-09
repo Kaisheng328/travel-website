@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGO - Travel Agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/agency.css">
+    <link rel="stylesheet" href="../css/SignIn.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="mainpage.html">TravelGO</a>
+        </div>
+        <nav class="scrollable-nav">
+            <ul>
+                <li class="nav-item"><a href="mainpage.html" class="nav-link text-black">Home</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link text-black">About</a></li>
+                <li class="nav-item"><a href="activityPage.html" class="nav-link text-black">Activities</a></li>
+                <li class="nav-item"><a href="favourites.html" class="nav-link text-black">Favourites</a></li>
+                <li class="nav-item"><a href="agency.html" class="nav-link text-black">Travel Agency</a></li>
+                <li class="nav-item"><a href="plans-packages.html" class="nav-link text-black">Plan & Package</a></li>
+                <li class="nav-item" id="userMenuItem">
+                    <button id="signInBtn" class="btn btn-outline-light rounded-pill px-4 py-2"
+                        style="font-size: 14px;">Sign In</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- end of header -->
+
+    <div id="signInModal" class="modal" style="display: none;">
+        <div class="main-container">
+            <span class="close">&times;</span>
+            <div class="image-container">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                    alt="login form">
+            </div>
+
+            <div class="form-container" id="loginContainer">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-cubes fa-2x" style="color: #ff6219; margin-right: 0.5rem;"></i>
+                    <h2>TravelGO</h2>
+                </div>
+                <h4>Sign into your account</h4>
+
+                <form id="loginForm">
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+
+                <div class="register-link">
+                    Don't have an account? <a href="#" id="showRegister">Register here</a>
+                </div>
+
+                <p class="terms">
+                    By logging in, you acknowledge and agree to <a href="#">TravelGO's Terms of Use</a> and
+                    <a href="#">Privacy Policy</a>.
+                </p>
+            </div>
+
+            <div class="form-container" id="registerContainer" style="display:none;">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-cubes fa-2x" style="color: #ff6219; margin-right: 0.5rem;"></i>
+                    <h2>TravelGO</h2>
+                </div>
+                <h4>Create your account</h4>
+
+                <form id="registerForm">
+                    <input type="text" id="registerName" placeholder="Username" required>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <button type="submit">Register</button>
+                </form>
+
+                <div class="register-link">
+                    Already have an account? <a href="#" id="showLogin">Login here</a>
+                </div>
+
+                <p class="terms">
+                    By registering, you acknowledge and agree to <a href="#">TravelGO's Terms of Use</a> and
+                    <a href="#">Privacy Policy</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section class="topdesign" id="topdesign">
+        <img src="" alt="" data-aos="fade-in">
+        <div class="title">
+            <h3> </h3>
+            <h2><b>Trusted Travel Agencies in Malaysia!</b></h2>
+            <p>Connect with expert travel planners to create your perfect Malaysian adventure</p>
+            <a href="#agency-list" class="btn btn-contact px-4 py-2">Find Your Agency</a>
+        </div>
+
+
+    </section>
+
+
+    <!-- Why Choose Our Agencies Section -->
+    <section class="py-5">
+        <div class="container agency-content">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-4">Why Choose Our Partner Agencies?</h2>
+                    <p class="lead">Our carefully selected travel partners are experts in creating unforgettable
+                        Malaysian experiences. Each agency provides personalized service to match your travel style and
+                        budget.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 animated-element" style="animation-delay: 0.7s;">
+                    <div class="text-center p-4">
+                        <div class="mb-4">
+                            <i class="bi bi-award text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4>Certified Experts</h4>
+                        <p>All our partner agencies are certified by Tourism Malaysia and have extensive local
+                            knowledge.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animated-element" style="animation-delay: 0.9s;">
+                    <div class="text-center p-4">
+                        <div class="mb-4">
+                            <i class="bi bi-person-check text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4>Personalized Service</h4>
+                        <p>Receive tailored recommendations based on your preferences, interests, and budget.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animated-element" style="animation-delay: 1.1s;">
+                    <div class="text-center p-4">
+                        <div class="mb-4">
+                            <i class="bi bi-shield-check text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h4>Secure Booking</h4>
+                        <p>Book with confidence knowing your travel plans are protected and secure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Agencies Section -->
+    <section id="agency-list" class="py-5 bg-light">
+        <div class="container agency-content">
+            <h2 class="section-title fw-bold mb-5">Featured Travel Agencies</h2>
+            <div class="row g-4">
+                <!-- Agency 1 -->
+                <div class="col-lg-4 col-md-6 animated-element" style="animation-delay: 0.7s;">
+                    <div class="agency-card">
+                        <div class="agency-img">
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMHBhUSBxAVFRUTGRUZGBgTFhgeGhwTGxgiHR0YGBohKCslHR8lHxwaLTEtJiorLy4yHSUzODMvNygtLisBCgoKDg0OGw8QFzclHx03NzcuKzc3NSstNzcrOC0vNy03Kys0Kzg1NTI1NysyLTcuKzE3Ky8rKy0rOCstLS0rLf/AABEIAMgAyAMBIgACEQEDEQH/xAAcAAEAAwEBAQEBAAAAAAAAAAAABQYHBAMIAgH/xABKEAABAwIDAwYICAwGAwAAAAABAAIDBBEFBhIHITETIkFRYXEWU4GRkqHB0RQyQlJiorHDCCM2N3JzgoSTsrPSFRczVHThJSdV/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAEDBQIEBv/EACIRAQABAwMEAwAAAAAAAAAAAAABAgMRBBIhEzFBURRxkf/aAAwDAQACEQMRAD8A3FERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARF+XHSN6D+k2UbU43FAbAlx+j71CYxixq3lsJswevtKi1l39fidtv8AXE1elk8JG3/03ecLspcaiqDbVpPU7d6+Cp6kKbB5aht2tsOt25VWtZfqniMoiqVx6EVdp6s4K8MxGaINPDVI0EdoDrXCsLXam3atW3XvjMxiXcTEv0iIrEiIiAiIgIiICIiAiIgIiICIiAiIgKHzHU8jRaW8X7vJ0+zzqXVczWfxzO4/avNq6pptTMIq7IFF2UuIvpviabdRa1TNO2HGoTdga8cbce/tCxrdmLnFNXPpXEZcuXKASuMkouGmzR29a5No2ZnYFhzWURtLNcA/NaOLu/eAP+lZcLpjSUQY/iC7y79xWbbZKciugk+SWub+0Df2+pbOntdO3EefKvU1TRamYZ5LKZpC6Zxc47ySbkntK2jZfixxHLgZMbugOjt0cW+rd+ysUWl7F3HlKodFoT5eerqe7O0dc9WI9tRREXbaEREBERAREQEREBERAREQEREBERAUHmiDXTNe35Jse4qbX4mjE0RbJvB3FVXrfUomn2iYyoK7cGlMOJMt0mx7juX5xGhdQz2f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"
+                                alt="Sedunia Travel">
+                        </div>
+                        <div class="agency-info">
+                            <h4>Sedunia Travel</h4>
+                            <div class="rating mb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                                <span class="text-muted ms-2">(128 reviews)</span>
+                            </div>
+                            <p><i class="bi bi-geo-alt me-2"></i>Kuala Lumpur City Center</p>
+                            <p><i class="bi bi-telephone me-2"></i>+603-27795479 (Tours & Flights)</p>
+                            <p><i class="bi bi-envelope me-2"></i>contact@seduniatravel.com</p>
+                            <p class="mb-3">Specialists in adventure tours and cultural immersion experiences across
+                                Malaysia.</p>
+                            <a href="https://seduniatravel.com/" class="btn btn-contact">Contact Agency</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agency 2 -->
+                <div class="col-lg-4 col-md-6 animated-element" style="animation-delay: 0.9s;">
+                    <div class="agency-card">
+                        <div class="agency-img">
+                            <img src="https://i.fbcd.co/products/resized/resized-750-500/4-c50939e2785ab16acad77dec84c7f02bd9eb414e0b0e58b8e7f4411571b33aea.jpg"
+                                alt="Star Travel">
+                        </div>
+                        <div class="agency-info">
+                            <h4>Star Travel</h4>
+                            <div class="rating mb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                                <span class="text-muted ms-2">(96 reviews)</span>
+                            </div>
+                            <p><i class="bi bi-geo-alt me-2"></i>Kota Kinabalu, Sabah</p>
+                            <p><i class="bi bi-telephone me-2"></i>+60 32786 7555</p>
+                            <p><i class="bi bi-envelope me-2"></i>hello@startravel.com</p>
+                            <p class="mb-3">Experts in Borneo wildlife tours, rainforest experiences, and indigenous
+                                culture.</p>
+                            <a href="https://www.startravel.com.my/" class="btn btn-contact">Contact Agency</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agency 3 -->
+                <div class="col-lg-4 col-md-6 animated-element" style="animation-delay: 1.1s;">
+                    <div class="agency-card">
+                        <div class="agency-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-UqxRcZxRMkOmNPyGJgqbok7r6HUXO6tiww&s"
+                                alt="Reliance Premier">
+                        </div>
+                        <div class="agency-info">
+                            <h4>Reliance Premier</h4>
+                            <div class="rating mb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <span class="text-muted ms-2">(214 reviews)</span>
+                            </div>
+                            <p><i class="bi bi-geo-alt me-2"></i>Georgetown, Penang</p>
+                            <p><i class="bi bi-telephone me-2"></i>+60 3-261 9000</p>
+                            <p><i class="bi bi-envelope me-2"></i>tours@Reliance Premier.com</p>
+                            <p class="mb-3">Specialized in culinary tours, heritage walks, and authentic Penang
+                                experiences.</p>
+                            <a href="https://www.reliancepremiertravel.com/" class="btn btn-contact">Contact Agency</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agency 4 -->
+                <div class="col-lg-4 col-md-6 animated-element" style="animation-delay: 1.3s;">
+                    <div class="agency-card">
+                        <div class="agency-img">
+                            <img src="data:image/png;base64,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"
+                                alt="Tripadvisor">
+                        </div>
+                        <div class="agency-info">
+                            <h4>Tripadvisor</h4>
+                            <div class="rating mb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                                <span class="text-muted ms-2">(89 reviews)</span>
+                            </div>
+                            <p><i class="bi bi-geo-alt me-2"></i>Pantai Cenang, Langkawi</p>
+                            <p><i class="bi bi-telephone me-2"></i>+60 4-955 1234</p>
+                            <p><i class="bi bi-envelope me-2"></i>apacpr@Tripadvisor.com</p>
+                            <p class="mb-3">Island hopping, beach vacations, and luxury resort packages in Langkawi.</p>
+                            <a href="https://www.tripadvisor.com.my/" class="btn btn-contact">Contact Agency</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agency 5 -->
+                <div class="col-lg-4 col-md-6 animated-element" style="animation-delay: 1.5s;">
+                    <div class="agency-card">
+                        <div class="agency-img">
+                            <img src="data:image/png;base64,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"
+                                alt="Klook">
+                        </div>
+                        <div class="agency-info">
+                            <h4>Klook</h4>
+                            <div class="rating mb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                                <span class="text-muted ms-2">(156 reviews)</span>
+                            </div>
+                            <p><i class="bi bi-geo-alt me-2"></i>Jonker Street, Malacca</p>
+                            <p><i class="bi bi-telephone me-2"></i>+60 6-282 6500</p>
+                            <p><i class="bi bi-envelope me-2"></i>contact@klook.my</p>
+                            <p class="mb-3">Experts in historical tours, cultural experiences, and Peranakan heritage.
+                            </p>
+                            <a href="https://www.klook.com/" class="btn btn-contact">Contact Agency</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agency 6 -->
+                <div class="col-lg-4 col-md-6 animated-element" style="animation-delay: 1.7s;">
+                    <div class="agency-card">
+                        <div class="agency-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSun4htN8rutX-7_2Nk6yKxkoRQbsuz9VARvQ&s"
+                                alt="Trivago">
+                        </div>
+                        <div class="agency-info">
+                            <h4>Trivago</h4>
+                            <div class="rating mb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                                <span class="text-muted ms-2">(78 reviews)</span>
+                            </div>
+                            <p><i class="bi bi-geo-alt me-2"></i>Cameron Highlands</p>
+                            <p><i class="bi bi-telephone me-2"></i>+60 5-491 5500</p>
+                            <p><i class="bi bi-envelope me-2"></i>info@Trivago.com.my</p>
+                            <p class="mb-3">Specializing in tea plantation tours, hiking trails, and cool mountain
+                                retreats.</p>
+                            <a href="https://www.trivago.com.my/en-MY" class="btn btn-contact">Contact Agency</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container agency-content">
+            <h2 class="section-title fw-bold mb-5">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-lg-6 animated-element" style="animation-delay: 0.7s;">
+                    <div class="testimonial-card">
+                        <div class="d-flex mb-4">
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PDw8NDw8PDg8QEBAREQ8PEBAOFRgVFRgXFhYWFhcZICsgGxolGxcYITEhJSktLjIuGB8zODYsNygtMC0BCgoKDg0OGhAPFi0mHSUtKy8tKy0tLS0tLS0tLS0tLS0tLSs3LS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAQYEBQcDAgj/xABBEAABAwIDBQYCBgcIAwAAAAABAAIDBBEFEiEGEzFBUQcUImFxgZGhIzJSscHRFUJicoKi8CQ0U2NlwuHxFjND/8QAGAEBAAMBAAAAAAAAAAAAAAAAAAECBAP/xAAhEQEAAwACAgIDAQAAAAAAAAAAAQIRAyESMQRBEzJR8P/aAAwDAQACEQMRAD8A60pRFZAihEEooRBKIiAiIgIiICIiAiIiBFF0uglFClEiIiAiIgIiIClQiAiIglERACIiCFKIghQiICIiAiIiEoiICIiJEREQIiICxcQroqeN00zwyNo1J+4dT5LIe4AEnQBcV2xx6bFcQFDTaxxktb0v+s939feqzORq1Y2ce21fabVvJbRN3EY/XcGvefOx0HzWDQdomKxsaJJIZMwztfJGLkcLHLYcuit+Hdn9M2Nu8BlfYZnG/HyCiv2OpQ0tEQt5km3os0/Iz6aq/G37ZuxXaFDXvFNMBBVH6ov4JLcQwng7nlPtexteF+aNosJdRTAtLgzMC17SWlpB0II4EHW/ku49n+0f6Row95HeITupwNLuAuHgdHDX1uOS0UvFo2Ge9JrOSs6IiuoIiICIiApUIgIilBClQpQEREBERB8oiICIiAiIiEoiICIiAiIgIiIK12hYt3TD5pQbOcMjfV2mnzPsucdkFPmNRVuADc+XOdOVzr0F1t+3mrtT0kAOr5JJCPJjbf717dnGEluGmPdh7t6+Rsch0NwC3PYW+Sz889Y0/Hr3q90mIUzhlbPC53JrZGE/C68q9zMhc4gepVZip6x9QwTUlM1jQPHExwLTrzI15DT5LJ2qpHSFkAAe1zcxY4kBx0sDbl+SzzP01RCp7XshqIZmMkjkdlOjHtcQRzsFrOyTGhFiW5vaOqjMZH+Y0FzD8nj+JbWowmpLnB1LBFC2+V7WujIA4WJGp9Fz3BZTT1zHjQw1TD/C2TX+W/xXbh62IceeNyX6iRQ03F1K1MYpUKUBERAREQEREBERAREQEREHyiIgIiIgUqFKAiIgIgUoCKEQFClY9dVNhikmf9WJjnutxs0E6fBBxnttrA+sjj4iCDUD7Tze3ray6Pg9RTsY18MjZIy1t3NIPitqD0PDRcLxPEnz1ne5vGTUNme3iLBwOQeQbp/0rR2R4qyPf4dMReR+8YTzeAGvF+pAaR1sVm5o2Nhr4LeM5LqVFiRmkkdEy8bDYu0JJ6NFx8VqdoMWa2aPI2QyNafDkPwJ4ALOiwsxWkjkmEYDg6CN4jab65gbXzD1sVoto54XgthNbvrEAvkcWg2Gpvqdb9Fn+m6td7hmYri4kh8Vg62rehXD5z/aak/5r/vuuk4pJFR0V5Xukk4ue62Y2HIcrkkLmWHAyGSZ3F73OI83a/iuvDHuWb5FomIh+ocFn3lNBJ9uJjviAs1Vjs5rRNhtMb6sbu3erNPyVnWtglKIikEREBERAREQEREBERAREQfCIiCUUKUBERBKIiIEREBERAWl2wd/YqgdYyD6cT8gVuVrMbsYnNJABDrk8gQQT8Ln+FQmH5nDjkeDx0HvzWFFM4ObZxu05m6nQjhbpwWbibmNJZHwJJvx05AFaweG/Vc3V+k8JxJ7YY5bbyN7Gu8xccPMLTY9tTTRhx3d38mhpuT8FudlI2mhp231ETPuCwsbwSN2aQgaDosPbdEuIbT4tNVy+O7WC5Dfz81FAy0LvW9vTVZm1dJupT4bA6hYUFSBGxp+z92gWuv6xjJb9p113sVqiYqmI/VEge31IAd/t+K6aubdjNEWU75iLCR77X5gZW6eV2rpK7V9OFvaUUIrISiIgIiICIiAiIgIiICIiDzREQSiIglERBKKFKAiIgIigoMWvxCKBuaV4bo4gcSQ3iQOg5ngFzPb3a3NHuY3NbnzAtDopCGnS4LHEcC4c+J4FZ22eKUT6sRVHd6sxPDWQ0efv8OUF7pQ/wCo6xbcxHkAeIIVG29rIpCwxzV1QHNzCoq3k7wHS7GWAYMwcLAC1kt1Ca+1OlcHOvpbj5WH4fklDBHJMxkkogjcQXSOY+Sw/dYCSfILFz2uD6ex/wCleNhmiMuqe+1NA55s0xYY+uDm/suykD/hc4jV9x0TBtpKGCCOOPv1TlYG5oMOqrG37wCyZ9pYpm5G4fjDr/6dMsCOoqpdWV+01WdP7vh0VGPjI1rV5vjmkuyWj2tkP2u+MaP5XBqn8NP4fmv/AFTe05xO4vTVNNmz5RUQmAkDLwF9bX+apdFGHlrD4T1/FWntGpzG+CPdV8JyyOyYhVMqn6lurcpIYPLnp0WipoA4MefCRobc+hVJrFeoXiZt3KzbF7RPpC6mdLUtGltzG1wGvEF0jWgeo9V1Cn2nqQ1hZRVVdE5jH76GOFlg46g/SEOcBr4bg3Gq4dEA+UNGfeB4a0sa06fxHTQn81eaLBqgMO+w4VPQVGL5JLAchG7K0+1/VdKT052jt2GkqWSsbKwktcLi7XMI5EFrgC0g6EEXBC9lUtgalwbPSPiqqd8JY8QVcneC1r7gbub/AOkd2m1zcG44WVtVlEoiICIiAiIgIoUoCIiAiIg80REAKVClAUqFKApUKUBERAXy42F19LFxK+4mytY87t9mSODGE2Oj3Hg3qel0HOpNpRE9zW4/hVG7M53d6XDjUsDiSTea/jcSdXczcrn2PVcdTMX5mOeW6uiNo9dczGW8JN9Rr4sxXQ48ckyFkeP4bFC126DRhW6gcQASGPuQRrxB9lyysna2aqIfHK4yPaJIBljdYkZox9k8Qo5F+NqhTGSQRxNc9zjZrWi5ceQXVtlqeaCAQxjaqnPOCCCAxX5lj3iwBPn1VP2NwPfF1RNQ4rUwg2jkw5lrPB8Rznjbhpw1V9NJlZZ9BtdNHbg+rcT7MY9Kwi0vuup3H+8YdtTJ0kFaZneuRj8g9AkWEukb4cO2imb1xLFO5sHrZ9wPZYUIprjdnbSld/gsbI75EFbB2z0ktnDA66vA1EuN4oGH13Qcbe4C6KKJtzhu6liApqWmL2nwUtUawGx1L3HW/wB+qrlNL4COhuPQLa7VTDv7oW0sFFufA+GncXsDrG5zczqNVqDHkaerXEO91nn27R6Zmz+Hz1NS2OKnfVEm7oWSbq4v+s/kL2XR6jZSQMA/8fw4WGsbMRJk93k8VT9hqGmnEolpsQr5HEAUtFeNhaQfFPLplbcWGvW6s5wCF8bpIMBw+opdQ+OlxI1NUGg2zB3AdbN1OguulY6UtPazdnTBHPUwBlTTiONl6Krk37oS46GGTXNE+3XQsPVXxUPsxDSJjDJLLSsa1kAqBaeDxO3lLJ+4WtI8nK+KVRSoUoCIiAiIgIoRBKKFKAiIg80UogIilARFKCFKIgIpUIC120AvSzAthcC2xFQS2HKSMxlsR9GG3JF9QCOa2K0G2b7QMaRSZTICTXzNhpxlBcDI06y2tmDBzaCeCR7JU8Y7A4xvqMVnqomeNtPHgrxSWsQBkc27mWPG/uFyaQROrCJJdxTSVD80kUbvC1zibsjPitY6NOoXXP028h748YxeqktZrsPwsd2bb9VrHMylo6gj1KqO0lZWuqKTEu+0lUaWSJm/MDaeWMvIt3mC19PxOmqm8Jq29JLhjI2xRYrtLIwCwZSgRN9m5dF676ij8f6R2spR9ue72fABZk20lYRd21eGQD7NPTwTH4Ft1iVG074WtcNrJJpZLFobhYkYbHXTKQFOq4z+/SFotU7VYhEeHdqV1K0jze5uc+1lhPwyimJz7P7QTOPOeWq19SXLwj2jhIJqdqcQjm4m1FPCwj9lgaLLyO0lCTZ21eJlvVkFUz8FOip7TUPdpJAaOSjDnAxwSkucxthbxHU8viq8+pc4G9uQ9bkn81bNq5MLnZvIcara6oGjWVMM5uLHQOc3TX2Vp7P+z+OIRV1WN5MWtfHC9tmRk6gkcXPHwB+KzXtFWilZv6Rsrg+JRYdHE5sRjbKZDQSuMLJAc13VTmtLn65A2MECzfF0PxWwQN+lqcGkwws+piWDSlwZ+06NvBvW4Kv1QW+LMfDwyuJHyCr9VUCFslQ1+4LRuzOzfybrPoHPY0WLQSCQ7TRUp8i0zEY72+LXxmdbjs9D3MqJZHxzyPfGDUw2DJ2hvgntyeWFrXDrGVbVXdhIiKVznBrXOnlztYzdtEjTllyt5NMrZHDycrGtLCIiICIpQQilQgIiICIiAiIg+EUogIilARFKAiIgIpRBCru25d3azTI0vzxZorB43jcpLdR4yCY28s0rSdArGtPtRJkgExZvNzLHIItLySNP0EY6Xn3KmPZKp4bU4xLM3C4JIIhTNjE8cW/dHCzTLG+rz53zFv2WkX97aqtwePEamPvFR3umpXPgdXPaaZzngi1O+QWZM29iHAA6Hrrk0eLzUlHioYc7oHGmMzPrVGJVLvpnjyjuGtHRpJ46e0FJDFV0eHyFppMCou+1dgMrqkjNcjrrmHuFa1djCtsnVtodnqOna1jYIW5QAPA0n4nVZrqOM2IABAsCNCB5WXM46uqfRMlDi3E9oK0CN17mGnY4C7f2RcaixyuHRXOixwNkrWWvS0UsNP3h78znyOswi1tTvNFlvwzHbRXliW2qqdz25S4O6F7I5CPQuBWrhpqmORkRqvon7xz701NmaxjS4lpDQOOUag/WW0iq45BmY8G/msCve7PKSdG4ZiOvneDVV47T5RGrclYiszirYZVVc7sKzVVhiVRVDd7in0ggJv4g0EucANRbis1+0zzSRVEdPndPiElFBEJMpcGZrPc7LoTlPht7rX4G/LLsd5w14+LBqtfBIY8OpZAbGi2n8XoHHN8nFarcVbe4/wB2zU5LV9S2u0GNOizRzCYNjEdRvqSWO4pZTljnbE+MiQB+j2k6XHEG40tXVNll3zwzeNijbUtg8FPWYfUEM7wxn6r2lwLhyI4nRZ+0s4Y18+XM/BaySkqIrE58OqT4QRzGRzWi/NpK+NlcEJq2UQ+kjoKiduZ1znoaqJ0sYN+P0gaPW6iK1rHUJte1vcuj7P0boKSngkOaRkTBI7q+wzE+ZN1sERFRERAREQEREBERAREQEREHyiIgKURARFKAiIgIpRBCx8QjLonZWhz22kjB/wASMh8f8zWrJRByzDKdpnwHDpD4Yad2L1efi6Z4Lg435tdp6Fa5z5Z8MqZ23FTj+KCGM2uRE1xsD+yCC30curVGD0skgmfTwvlaCBK6NpeAeIzWvbyVJ2nwCSjmgraZpliiqC+OHex00VKHNGZzWZbFl2knTnfldX8kY+S6OPE6uqaM1NgNAymp2aWM7mlrWtPDMTdnrZa+cOpKbC8PdJaeolfiNW82BubhhcP2iSfVhWtpK2phjkhrKV9PTVGImtmq3kyxSC/ij3jAWgXFwTbktNtG+bFcQq6yOaBlKHta2Z9WyBrI2ANDW68eJ4Wu4qvJEzXIWpMRbZX2cQs+kbVZHcTqLH1CUGNGQVQf4gKCsY2QA5SXbvQHrpwWloNlcAdCyWXEWzOcL5XYnCPaz2NIPkQvufZfByPomb3of01SNH3lcePg8Z3Xbk5/KMx50WIMbNsoDcGFtY14IIsTlAuFq6mtvhOONH1mY2+Zl9NC9rfwK9zsrBmvDh9PJJyMmNsk97N/Jecmz1dHmBwKlnjcbkRVLCb9cxNyfZd9cMbnFp2y4zUxH/04rhALx1dlc1p9QGO+KtPZpSAUMM8jHtqXQQ08pkFjaAODR5jxE38/Jcxnhha/LNQY3RSOAjD4JJJ9L6Na5xJtrwHVdU2CwCSiheH1FVMyUteyOrN3s439L6aeSqLQiKUEIpRBCKUQQiIghFKIIUoiAilQg+UQIgKVClAREQFKIgIiIClERCFBhz6EAjodV9L3awgXH9afmoTClSdn7WhwoK6sw6Nznk0zH7ynuSc1o3cATfQGy8xshiUDHuhqcOrpjly9+w6OM6WFhLEbjTq13AcFfRYacl82af8Ag2U+UmOYS7N4pJI19VhOz9RkaWgeKLj5kG+vUc+Sw2bDVj5C52E4GyM8Y2zVEB9jGCPkuh4jSVL6qmMcjW0rRJv7uIeXWGS2mov5hZ/d4xxJPqSfvTzMcxi7OQ8yNqaXDImyP+jEZqZXMHCwkBY5/vbivqg7OYISHMdM2x4MmqI23Hln4eq6VkaPqsJPsF4PvneMpAuDcC48XK/W4+arMrKzJhuRuUk8OJJcfI681aaSQujjceJY0n1tqsKogsCSLHzXvhr/AAll75T8j/RSCWYiIrKiIiAiIgIiICIiAiIgIoRB8BSiIgUqEQSiIgKURAUoiAihEEt4rJaURQmBy+CLoiJeFY7K1z+JawkDz4BG6WsANOSIgluvFfUjQWuaNCRofPkURBqp3AMbxLja5OuvRRRjLNa/6uvwuiKEtoiIrKiIiAiIghERAREQFCIgXUIiD//Z" alt="Customer" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-1">Sarah Johnson</h5>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="text-muted">Travelled with Malaysia Expeditions</p>
+                            </div>
+                        </div>
+                        <p>"Our family trip to Borneo was absolutely amazing! The guides were knowledgeable, and every
+                            detail was taken care of. We saw orangutans in the wild, explored caves, and stayed in
+                            beautiful accommodations. Highly recommend!"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 animated-element" style="animation-delay: 0.9s;">
+                    <div class="testimonial-card">
+                        <div class="d-flex mb-4">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQffVXFgYxENiH-VLaMIoiIgkDilyO2hA9VIw&s" alt="Customer" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-1">David Chen</h5>
+                                <div class="rating">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <p class="text-muted">Travelled with Penang Heritage Tours</p>
+                            </div>
+                        </div>
+                        <p>"The food tour in Penang was a highlight of our Malaysian vacation. Our guide took us to
+                            local spots we would never have found on our own. We tried over 15 different dishes and
+                            learned so much about the culture. A must-do experience!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Agency Contact Section -->
+    <section class="py-5 bg-light">
+        <div class="container agency-content">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0 animated-element" style="animation-delay: 0.7s;">
+                    <h2 class="section-title fw-bold">Contact Our Main Office</h2>
+                    <p class="mb-4">Have questions about our partner agencies or need help selecting the right one for
+                        your trip? Our main office is here to assist you.</p>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Address</h5>
+                            <p class="mb-0">1182, Jalan Seksyen 1/2, 31900 Kampar Perak, Malaysia</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Phone</h5>
+                            <p class="mb-0">+60 16-8888 888</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Email</h5>
+                            <p class="mb-0">agencies@travelgo.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="bi bi-clock"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Operating Hours</h5>
+                            <p class="mb-0">Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 animated-element" style="animation-delay: 0.9s;">
+                    <div class="contact-section">
+                        <h4 class="mb-4">Send Us a Message</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="interest" class="form-label">Interested In</label>
+                                <select class="form-select" id="interest">
+                                    <option selected>Select your interest</option>
+                                    <option value="adventure">Adventure Tours</option>
+                                    <option value="cultural">Cultural Experiences</option>
+                                    <option value="food">Food & Culinary Tours</option>
+                                    <option value="beach">Beach & Island Getaways</option>
+                                    <option value="wildlife">Wildlife & Nature</option>
+                                    <option value="luxury">Luxury Travel</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-contact w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer text-white mt-5 pt-5 text-center">
+        <div class="container">
+            <!-- Clickable About Us Link -->
+            <a href="javascript:void(0);" onclick="showAboutUs(event)" class="text-white">
+                <h5>About Us</h5>
+            </a>
+            <div id="about-us-content" style="display: none;">
+                <p>TravelGO is a superb website to help you discover the best travel destinations and activities in
+                    Malaysia. We provide
+                    the best services in Malaysia and detailed information about any place.</p>
+            </div>
+
+            <h5>Don't wait any longer. Contact us!</h5>
+            <p>Email: support@travelgo.com | Phone: +60 1111 8888</p>
+
+            <div class="social-icons my-3">
+                <a href="https://www.facebook.com" class="text-white mx-2" target="_blank">
+                    <i class="bi bi-facebook" style="font-size: 2rem;"></i>
+                </a>
+                <a href="https://www.instagram.com" class="text-white mx-2" target="_blank">
+                    <i class="bi bi-instagram" style="font-size: 2rem;"></i>
+                </a>
+                <a href="https://www.twitter.com" class="text-white mx-2" target="_blank">
+                    <i class="bi bi-twitter-x" style="font-size: 2rem;"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Back to top button -->
+        <button id="backToTop" class="back-to-top">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+
+        <div class="footer-bottom mt-4 pt-4 border-top text-center">
+            <p>&copy; 2025 TravelGO. All Copyrights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/agency.js"></script>
+    <script src="../js/SignIn.js"></script>
+</body>
+
+</html>
