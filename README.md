@@ -46,7 +46,10 @@ git push origin your-branch-name
 5. Add a title and description for your changes.
 6. Click `Create Pull Request`.
 
-## Step 6: Wait for Review & Merging
+## Step 7: Wait for Review & Merging
 The repository owner will review your pull request. If needed, they may request changes before merging. Once approved, your changes will be merged into `main`.
+
+#Guide for running website
+Right Click on mainpage.html, Click open with Live Server
 
 
