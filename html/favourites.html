@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGO - Favourites</title>
+    <link rel="stylesheet" href="../css/favourites.css">
+    <link rel="stylesheet" href="../css/SignIn.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="mainpage.html">TravelGO</a>
+        </div>
+        <nav class="scrollable-nav">
+            <ul>
+                <li class="nav-item"><a href="mainpage.html" class="nav-link text-black">Home</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link text-black">About</a></li>
+                <li class="nav-item"><a href="activityPage.html" class="nav-link text-black">Activities</a></li>
+                <li class="nav-item"><a href="favourites.html" class="nav-link text-black">Favourites</a></li>
+                <li class="nav-item"><a href="agency.html" class="nav-link text-black">Travel Agency</a></li>
+                <li class="nav-item"><a href="plans-packages.html" class="nav-link text-black">Plan & Package</a></li>
+                <li class="nav-item" id="userMenuItem">
+                    <button id="signInBtn" class="btn btn-outline-light rounded-pill px-4 py-2"
+                        style="font-size: 14px;">Sign In</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div id="signInModal" class="modal" style="display: none;">
+        <div class="main-container">
+            <span class="close">&times;</span>
+            <div class="image-container">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                    alt="login form">
+            </div>
+
+            <div class="form-container" id="loginContainer">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-cubes fa-2x" style="color: #ff6219; margin-right: 0.5rem;"></i>
+                    <h2>TravelGO</h2>
+                </div>
+                <h4>Sign into your account</h4>
+
+                <form id="loginForm">
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+
+                <div class="register-link">
+                    Don't have an account? <a href="#" id="showRegister">Register here</a>
+                </div>
+
+                <p class="terms">
+                    By logging in, you acknowledge and agree to <a href="#">TravelGO's Terms of Use</a> and
+                    <a href="#">Privacy Policy</a>.
+                </p>
+            </div>
+
+            <div class="form-container" id="registerContainer" style="display:none;">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-cubes fa-2x" style="color: #ff6219; margin-right: 0.5rem;"></i>
+                    <h2>TravelGO</h2>
+                </div>
+                <h4>Create your account</h4>
+
+                <form id="registerForm">
+                    <input type="text" id="registerName" placeholder="Username" required>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <button type="submit">Register</button>
+                </form>
+
+                <div class="register-link">
+                    Already have an account? <a href="#" id="showLogin">Login here</a>
+                </div>
+
+                <p class="terms">
+                    By registering, you acknowledge and agree to <a href="#">TravelGO's Terms of Use</a> and
+                    <a href="#">Privacy Policy</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorites Content -->
+    <main>
+        <section class="favorites-section">
+            <h2>Favorited Activities</h2>
+            <div id="favorited-activities" class="favorites-container">
+                <!-- Favorited activities will be dynamically injected here -->
+            </div>
+
+            <h2>Favorited Packages</h2>
+            <div id="favorited-packages" class="favorites-container">
+                <!-- Favorited packages will be dynamically injected here -->
+            </div>
+        </section>
+    </main>
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+
+    <!-- Footer -->
+    <footer class="footer text-white mt-5 pt-5 text-center">
+        <div class="container">
+            <!-- Clickable About Us Link -->
+            <a href="javascript:void(0);" onclick="showAboutUs(event)" class="text-white">
+                <h5>About Us</h5>
+            </a>
+            <div id="about-us-content" style="display: none;">
+                <p>TravelGO is a superb website to help you discover the best travel destinations and activities in
+                    Malaysia. We provide
+                    the best services in Malaysia and detailed information about any place.</p>
+            </div>
+
+            <h5>Don't wait any longer. Contact us!</h5>
+            <p>Email: support@travelgo.com | Phone: +60 1111 8888</p>
+
+            <div class="social-icons my-3">
+                <a href="https://www.facebook.com" class="text-white mx-2" target="_blank">
+                    <i class="bi bi-facebook" style="font-size: 2rem;"></i>
+                </a>
+                <a href="https://www.instagram.com" class="text-white mx-2" target="_blank">
+                    <i class="bi bi-instagram" style="font-size: 2rem;"></i>
+                </a>
+                <a href="https://www.twitter.com" class="text-white mx-2" target="_blank">
+                    <i class="bi bi-twitter-x" style="font-size: 2rem;"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom mt-4 pt-4 border-top text-center">
+            <p>&copy; 2025 TravelGO. All Copyrights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/favourites.js"></script>
+    <script src="../js/SignIn.js"></script>
+
+</body>
+
+</html>

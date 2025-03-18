@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGO - Detailed Activity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/detailPage.css">
+    <link rel="stylesheet" href="../css/SignIn.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="mainpage.html">TravelGO</a>
+        </div>
+        <nav class="scrollable-nav">
+            <ul>
+                <li class="nav-item"><a href="mainpage.html" class="nav-link text-black">Home</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link text-black">About</a></li>
+                <li class="nav-item"><a href="activityPage.html" class="nav-link text-black">Activities</a></li>
+                <li class="nav-item"><a href="favourites.html" class="nav-link text-black">Favourites</a></li>
+                <li class="nav-item"><a href="agency.html" class="nav-link text-black">Travel Agency</a></li>
+                <li class="nav-item"><a href="plans-packages.html" class="nav-link text-black">Plan & Package</a></li>
+                <li class="nav-item" id="userMenuItem">
+                    <button id="signInBtn" class="btn btn-outline-light rounded-pill px-4 py-2"
+                        style="font-size: 14px;">Sign In</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-button">
+        <i class="bi bi-arrow-left"></i>
+    </a>
+
+    <!-- title section -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <div id="activity-info">
+                    <h1 id="activity-title" class="mb-3"></h1>
+                    <p id="activity-category" class="mb-2"></p>
+                    <p id="activity-rating"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="my-4" style="border: 1px solid #000000;">
+
+    <!-- About Section -->
+    <div id="about-section" class="container my-4">
+        <div class="row">
+            <div class="col-10 col-md-10 about-content">
+                <h2>About</h2>
+                <p id="long-description"></p>
+                <p id="operating-hour" class="mt-3"></p>
+                <a href="#" id="see-more-link">More hours</a>
+                <a href="#" id="collapse-link" style="display:none;">Hide hours</a>
+                <p id="open-now-status"></p>
+            </div>
+            <div class="col-2 col-md-2"></div>
+        </div>
+    </div>
+
+    <!-- Images Section -->
+    <div id="images-section" class="container my-4">
+        <div class="row">
+            <div class="col-2 col-md-2"></div>
+            <div class="col-10 col-md-10 about-content">
+                <h2>A Visual Journey</h2>
+                <div class="row">
+                    <div id="carouselExampleIndicators" class="carousel slide">
+                        <div class="carousel-inner" id="carousel-images"></div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <div id="video-section" class="container my-4">
+        <div class="row">
+            <div class="col-10 col-md-10 about-content">
+                <h2>A Sneak Peek into the Experience</h2>
+                <div id="video-section-content"></div>
+            </div>
+            <div class="col-2 col-md-2"></div>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <div id="map-section" class="container my-4">
+        <div class="row">
+            <div class="col-2 col-md-2"></div>
+            <div class="col-10 col-md-10 about-content">
+                <h2>We are Here</h2>
+                <h6 id="activity-address"></h6>
+                <div id="map" style="height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comment Section -->
+    <div id="comment-section" class="container-fluid my-4">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <hr class="my-4" style="border: 1px solid #000000;">
+                <h2 class="text-center mb-4">Comments</h2>
+                <h5 style="text-align: right;">Slide for more -></h5>
+
+                <!-- Display Comments -->
+                <div id="comments-display" class="d-flex overflow-auto">
+                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                        <h5 class="comment-author">John Doe</h5>
+                        <p class="comment-text">This is a great place to visit! Highly recommended.</p>
+                        <p class="text-muted">Posted on: 2024-08-16</p>
+                    </div>
+                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                        <h5 class="comment-author">Jane Smith</h5>
+                        <p class="comment-text">Had a wonderful time here with my family.</p>
+                        <p class="text-muted">Posted on: 2024-08-15</p>
+                    </div>
+                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                        <h5 class="comment-author">Alice Johnson</h5>
+                        <p class="comment-text">A memorable experience, would love to come back!</p>
+                        <p class="text-muted">Posted on: 2024-08-14</p>
+                    </div>
+                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                        <h5 class="comment-author">Anthony</h5>
+                        <p class="comment-text">Highly recommended to this place. I love it!</p>
+                        <p class="text-muted">Posted on: 2024-08-14</p>
+                    </div>
+                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                        <h5 class="comment-author">Nunez</h5>
+                        <p class="comment-text">What a special place. First time been here.</p>
+                        <p class="text-muted">Posted on: 2024-08-14</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <div id="signInModal" class="modal" style="display: none;">
+        <div class="main-container">
+            <span class="close">&times;</span>
+            <div class="image-container">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                    alt="login form">
+            </div>
+
+            <div class="form-container" id="loginContainer">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-cubes fa-2x" style="color: #ff6219; margin-right: 0.5rem;"></i>
+                    <h2>TravelGO</h2>
+                </div>
+                <h4>Sign into your account</h4>
+
+                <form id="loginForm">
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+
+                <div class="register-link">
+                    Don't have an account? <a href="#" id="showRegister">Register here</a>
+                </div>
+
+                <p class="terms">
+                    By logging in, you acknowledge and agree to <a href="#">TravelGO's Terms of Use</a> and
+                    <a href="#">Privacy Policy</a>.
+                </p>
+            </div>
+
+            <div class="form-container" id="registerContainer" style="display:none;">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-cubes fa-2x" style="color: #ff6219; margin-right: 0.5rem;"></i>
+                    <h2>TravelGO</h2>
+                </div>
+                <h4>Create your account</h4>
+
+                <form id="registerForm">
+                    <input type="text" id="registerName" placeholder="Username" required>
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <button type="submit">Register</button>
+                </form>
+
+                <div class="register-link">
+                    Already have an account? <a href="#" id="showLogin">Login here</a>
+                </div>
+
+                <p class="terms">
+                    By registering, you acknowledge and agree to <a href="#">TravelGO's Terms of Use</a> and
+                    <a href="#">Privacy Policy</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    <!-- Footer -->
+    <footer class="footer text-white mt-5 pt-5 text-center">
+        <div class="container">
+            <!-- Clickable About Us Link -->
+            <a href="javascript:void(0);" onclick="showAboutUs(event)" class="text-white">
+                <h5>About Us</h5>
+            </a>
+            <div id="about-us-content" style="display: none;">
+                <p>TravelGO is a superb website to help you discover the best travel destinations and activities in
+                    Malaysia. We provide
+                    the best services in Malaysia and detailed information about any place.</p>
+            </div>
+
+            <h5>Don't wait any longer. Contact us!</h5>
+            <p>Email: support@travelgo.com | Phone: +60 1111 8888</p>
+
+            <div class="social-icons my-3">
+                <a href="https://www.facebook.com" class="text-white mx-2" target="_blank">
+                    <i class="bi bi-facebook" style="font-size: 2rem;"></i>
+                </a>
+                <a href="https://www.instagram.com" class="text-white mx-2" target="_blank">
+                    <i class="bi bi-instagram" style="font-size: 2rem;"></i>
+                </a>
+                <a href="https://www.twitter.com" class="text-white mx-2" target="_blank">
+                    <i class="bi bi-twitter-x" style="font-size: 2rem;"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom mt-4 pt-4 border-top text-center">
+            <p>&copy; 2025 TravelGO. All Copyrights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Please don't use my api key, Thank you for your collaboration-->
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/detailPage.js"></script>
+    <script src="../js/SignIn.js"></script>
+</body>
+
+</html>

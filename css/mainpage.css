@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+:root{
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--Quicksand);
+}
+/* General Styles */
+body {
+    background-color: #F0F0F0 !important;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #b7f2f7; 
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+header .logo a {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #000000; 
+    text-decoration: none; 
+}
+
+header .scrollable-nav {
+    margin-left: auto; 
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 15px;
+    background-color: #b7f2f7; 
+    border-radius: 8px;
+}
+
+.topdesign .title button {
+    background-color: transparent;
+    display: block;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    padding: 0;
+    margin: 30px auto;
+}
+
+.topdesign .title button a {
+    padding: 10px 40px;
+    display: block;
+    color: #FFF;
+}
+
+.topdesign .title button:hover {
+    background-color: #bd8cbf;
+    border: 1px solid #bd8cbf;
+}
+
+.topdesign .title button:hover a {
+    color: white;
+}
+.scrollable-nav::-webkit-scrollbar {
+    display: none; 
+}
+
+.scrollable-nav {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    overflow-y: hidden; 
+}
+
+.scrollable-nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.scrollable-nav li {
+    margin-right: 20px;
+}
+
+.scrollable-nav a {
+    color: #ffffff;
+    text-decoration: none; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+
+.scrollable-nav a:hover,
+.scrollable-nav a.active {
+    color: #ffffff !important;
+    background-color: #000000; 
+}
+
+.scrollable-nav .sign-in {
+    margin-left: auto;
+}
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #7d7d7d; 
+    color: white; 
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.back-to-top:hover {
+    opacity: 1.0; 
+    background-color: #242424;
+}
+.back-to-top i {
+    font-size: 24px; 
+}
+
+
+
+
+.card-img-top {
+    border-radius: 10px;
+    height: 250px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+/* Popular Activities Styles */
+.popular-activities {
+    padding: 20px;
+}
+
+.popular-activities h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.activity-carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%; 
+}
+
+.carousel-items {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.activity-card {
+    position: relative;
+    flex: 0 0 33.33%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.activity-card img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover img {
+    transform: scale(1.1);
+}
+
+.activity-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.activity-card:hover .overlay {
+    opacity: 1;
+}
+
+.activity-card .overlay h3 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
+
+.activity-card .overlay p {
+    font-size: 1rem;
+    margin: 0; 
+}
+
+
+.carousel-items {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    cursor: grab;
+    user-select: none; /* Prevents text selection during drag */
+    -ms-overflow-style: none; /* Hides scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .carousel-items::-webkit-scrollbar {
+    display: none;
+  }
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* On mobile, stack logo and navbar vertically */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .scrollable-nav {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .popular-activities h2 {
+        font-size: 1.5rem; 
+    }
+
+    .activity-card {
+        flex: 0 0 100%;
+        padding: 0 5px;
+    }
+
+    .carousel-control {
+        font-size: 1.2rem; 
+        padding: 5px;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    padding: 20px 0;
+    background-color: #000000;
+}
+
+.footer .social-icons a {
+    color: #000000;
+    margin-right: 15px;
+    font-size: 2rem; /* Increased icon size */
+}
+
+.footer .social-icons a:hover {
+    color: #0804d4;
+}
+
+.footer .contact-info {
+    margin: 20px 0;
+}
+
+
+/* About Us Section */
+#about-us-section {
+    display: none; 
+    position: relative; 
+}
+
+.nav-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-section {
+    position: relative;
+    height: 60vh;
+    background-image: url('https://www.gravelspringsltd.com/assets/uploads/opportunity_banner2023062927442824071688076644.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
+.about-content h2 {
+    color: #fbfbfb;
+    margin-bottom: 1.5rem;
+}
+
+.go-back-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background-color: #ffffff; 
+    color: #000000; 
+    border: none; 
+    border-radius: 25px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.go-back-btn:hover {
+    background-color: #ffffff; 
+    color: #000000; 
+}
+/* Featured Destinations Styles */
+.container {
+    padding: 20px;
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    visibility: hidden;
+  }
+  
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  
+  /* Card Animation for Destinations */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
+ 
+  
+  /* top design */
+.topdesign{
+    padding: 4.5rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://www.malaysia.travel/webroot/articles/peekintomalaysia/hero_mountkinabalu.jpg) center/cover no-repeat fixed;
+
+}
+.topdesign .title button {
+    background-color: transparent;
+    display: block;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    padding: 0;
+    margin: 30px auto;
+}
+
+.topdesign .title button a {
+    padding: 10px 40px;
+    display: block;
+    color: #FFF;
+}
+
+.topdesign .title button:hover {
+    background-color: #bd8cbf;
+    border: 1px solid #bd8cbf;
+}
+
+.topdesign .title button:hover a {
+    color: white;
+}
+.topdesign .title h2,
+.topdesign .title p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Dark shadow for better readability */
+    color: #fff; /* Ensure text color contrasts well */
+}
+.topdesign .title h2 {
+    font-size: 2.4rem;
+    font-family: var(--Playfair);
+}
+.topdesign .title p {
+    text-transform: uppercase;
+    padding: 0.6rem 0;
+}
+.title{
+    text-align: center;
+    padding: 1rem 0;
+}
+.title h2{
+    font-family: var(--Playfair);
+    font-size: 2.4rem;
+}
+.title p{
+    text-transform: uppercase;
+    padding: 0.6rem 0;
+}
+.btn-contact {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

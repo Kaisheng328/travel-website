@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--Quicksand);
+}
+body {
+    background-color: #F0F0F0; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/*--------------------------- Header Styles ----------------------------*/
+header {
+    background-color: #b7f2f7; 
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+  }
+  
+  /* Logo Styles */
+  header .logo {
+    flex-shrink: 0;
+  }
+  
+  header .logo a {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #000000; 
+    text-decoration: none; 
+  }
+  #signInBtn {
+    color: black !important; /* Text color */
+    border-color: black !important; /* Outline color */
+  }
+  
+  #signInBtn:hover {
+    background-color: black !important; /* Background on hover */
+    color: white !important; /* Text turns white on hover */
+  }
+  /* Scrollable Navigation Styles */
+  header .scrollable-nav {
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 15px;
+    background-color: #b7f2f7; 
+    border-radius: 8px;
+  }
+  
+  .scrollable-nav::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .scrollable-nav {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    overflow-y: hidden; 
+  }
+  
+  .scrollable-nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+  }
+  
+  .scrollable-nav li {
+    margin-right: 20px;
+  }
+  
+  .scrollable-nav a {
+    color: #ffffff;
+    text-decoration: none; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; 
+  }
+  
+  .scrollable-nav a:hover,
+  .scrollable-nav a.active {
+    color: #ffffff !important;
+    background-color: #000000; 
+  }
+  
+  /* Sign-in Button */
+  .scrollable-nav .sign-in {
+    margin-left: auto;
+  } 
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #7d7d7d; 
+    color: white; 
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.back-to-top:hover {
+    opacity: 1.0; 
+    background-color: #242424;
+}
+.back-to-top i {
+    font-size: 24px; 
+}
+
+
+
+/* -------------------------- Back Button Style --------------------------*/
+.back-button {
+    position: fixed;
+    top: 70px; 
+    left: 20px; 
+    width: 50px;
+    height: 50px;
+    background-color: #9a9a9d; 
+    color: white; 
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    text-decoration: none; 
+}
+.back-button:hover {
+    background-color: #585859; 
+}
+.back-button i {
+    font-size: 24px; 
+}
+
+/* ---------------------------- title section ---------------------------- */
+#activity-info {
+    background-color: transparent; 
+    box-shadow: none; 
+}
+#activity-info h1, #activity-info p {
+    color: #333; 
+}
+#activity-info h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#activity-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+
+/* ---------------------------- about section ---------------------------- */
+#about-section {
+    padding-bottom: 40px;
+}
+.about-content {
+    background-color: white; 
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+}
+
+/* ---------------------------- images section ---------------------------- */
+#images-section {
+    padding-bottom: 40px;
+}
+.carousel {
+    max-width: 100%; 
+    overflow: hidden; 
+    border: 1px solid #ddd; 
+    border-radius: 5px;    
+    position: relative; 
+}
+.carousel-inner {
+    width: 100%;
+    height: 510px; 
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%; 
+}
+
+/* ---------------------------- video section ---------------------------- */
+#video-section {
+    padding-bottom: 40px;
+}
+.embed-responsive {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+}
+.embed-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------------------------- map section ---------------------------- */
+#map-section {
+    padding-bottom: 40px;
+}
+
+/* ---------------------------- comments section ---------------------------- */
+#comments-display {
+    white-space: nowrap; 
+    margin-bottom: 50px;
+}
+.comment-item {
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word; 
+    max-width: 100%; 
+    margin-right: 15px;
+}
+.text-muted {
+    margin-top: auto; 
+}
+
+/* ---------------------------- back to top button ---------------------------- */
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #686868; 
+    color: white; 
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.back-to-top:hover {
+    opacity: 1.0; 
+    background-color: #323232;
+}
+.back-to-top i {
+    font-size: 24px; 
+}
+
+/*------------------ Footer Styles --------------------*/
+.footer {
+    padding: 20px 0;
+    background-color: #000000;
+}
+
+.footer .social-icons a {
+    color: #000000;
+    margin-right: 15px;
+    font-size: 2rem; /* Increased icon size */
+}
+
+.footer .social-icons a:hover {
+    color: #0804d4;
+}
+
+.footer .contact-info {
+    margin: 20px 0;
+}
+
+
+@media (max-width: 768px) {
+    .back-button {
+        top: 125px;
+        width: 40px;
+        height: 40px;
+    }
+    /* ---------------------------- Header Section ---------------------------- */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .scrollable-nav {
+        width: 100%;
+    }
+
+    .scrollable-nav ul {
+        flex-direction: row;
+    }
+
+    .scrollable-nav li {
+        margin-right: 20px;
+    }
+    /* ---------------------------- Title Section ---------------------------- */
+    #activity-info h1 {
+        font-size: 3rem;
+    }
+    #activity-info p {
+        font-size: 1rem;
+    }
+    /* ---------------------------- about Section ---------------------------- */
+    #about-section h2{
+        font-weight: 1000;
+    }
+    /* ---------------------------- images Section ---------------------------- */
+    #images-section h2{
+        font-weight: 1000;
+    }
+    .carousel-inner {
+        height: 200px; 
+    }
+    
+    .carousel-item img {
+        max-height: 300px; 
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 17%; 
+        height: 40px; 
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 25px; 
+        height: 25px; 
+    }
+    /* ---------------------------- video Section ---------------------------- */
+    #video-section h2{
+        font-weight: 1000;
+    }
+    /* ---------------------------- map Section ---------------------------- */
+    #map-section h2{
+        font-weight: 1000;
+    }
+    /* ---------------------------- comments Section ---------------------------- */
+    #comment-section h5{
+        font-size: 0.9em;
+    }
+    #comment-section h2{
+        font-weight: 1000;
+    }
+}

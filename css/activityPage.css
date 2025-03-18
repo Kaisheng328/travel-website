@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+    background-color: #F0F0F0; 
+    margin: 0; 
+    padding: 0; 
+}
+body, html {
+    overflow-x: hidden; 
+}
+
+/*------------------ Header Styles ---------------------*/
+/* Header Styles */
+header {
+    background-color: #b7f2f7; /* Header background color */
+    color: #ffffff; /* Text color for header elements */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Aligns items to both sides of the header */
+    align-items: center;
+}
+
+header .logo a {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #000000; 
+    text-decoration: none; 
+}
+#signInBtn {
+    color: black !important; /* Text color */
+    border-color: black !important; /* Outline color */
+}
+
+#signInBtn:hover {
+    background-color: black !important; /* Background on hover */
+    color: white !important; /* Text turns white on hover */
+}
+
+header .scrollable-nav {
+    margin-left: auto; /* Pushes the nav bar to the right side */
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right within the nav bar */
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 15px;
+    background-color: #b7f2f7; /* Background color for contrast */
+    border-radius: 8px;
+}
+
+.scrollable-nav::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scrollable-nav {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    overflow-y: hidden; 
+}
+
+.scrollable-nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.scrollable-nav li {
+    margin-right: 20px;
+}
+
+.scrollable-nav a {
+    color: #ffffff; /* Default text color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 15px; /* Add padding for better spacing */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.scrollable-nav a:hover,
+.scrollable-nav a.active {
+    color: #ffffff !important; /* Ensure text color changes to black on hover */
+    background-color: #000000; /* White background on hover */
+}
+
+.scrollable-nav .sign-in {
+    margin-left: auto;
+}
+
+/*----------------------- Back Button Style -------------------*/
+.back-button {
+    position: fixed;
+    top: 70px; 
+    left: 20px; 
+    width: 50px;
+    height: 50px;
+    background-color: #9a9a9d; 
+    color: white; 
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    text-decoration: none; 
+}
+.back-button:hover {
+    background-color: #585859;
+}
+.back-button i {
+    font-size: 24px; 
+}
+/* ---------------------------- Title Section ---------------------------- */
+.title-section {
+    height: auto; 
+    text-align: center;
+    background-color: transparent; 
+    padding: 60px 0;
+}
+.title-section h1 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 3.5rem; 
+    font-weight: 700; 
+    color: #343a40; 
+}
+.title-section p.description-text {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1rem; 
+    color: #6c757d; 
+    margin-top: 1rem; 
+    text-align: center;
+    max-width: 800px; 
+    padding: 0 15px; 
+}
+
+/* ---------------------------- Carousel Section ---------------------------- */
+.carousel-inner{
+    border-radius: 20% 0;
+}
+.carousel-item img {
+    height: 550px; 
+    object-fit: cover; 
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 55px; 
+    height: 55px; 
+    background-color: black; 
+    border-radius: 50%; 
+    background-size: 50%; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carousel-control-prev .sr-only,
+.carousel-control-next .sr-only {
+    display: none; 
+}
+.carousel-caption {
+    width: 670px;
+    height: 100px;
+    position: absolute;
+    top: 75%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    padding: 10px;
+    border-radius: 10px;
+}
+.carousel-caption h5{
+    font-size: 4rem;
+    text-align: left;
+    font-weight: 700;
+}
+
+/* ---------------------------- Filter Section ---------------------------- */
+.filter-section {
+    padding: 20px;
+}
+.filter-section h4{
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+.form-label{
+    font-size: 20px;
+}
+/* ---------------------------- Category Filter Section ---------------------------- */
+#categoryFilter{
+    margin-bottom: 30px;
+}
+.btn.chip {
+    border: 1.5px solid #e7e7e7;
+    border-radius: 17px;
+    padding: 8px 15px 8px 30px; 
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #ffffff;
+    position: relative;
+    cursor: pointer;
+}
+.btn.chip.active {
+    color: #ffffff;
+    border-color: #000000;
+    background-color: rgb(52, 52, 52);
+}
+.btn.chip .bi-check-lg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: transparent; 
+}
+.btn.chip.active .bi-check-lg {
+    color: #ffffff; 
+}
+
+/* ---------------------------- Ratings Filter Section ---------------------------- */
+.form-check{
+    padding-left: 0;
+}
+.form-check-input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.form-check-input[type="radio"] + .form-check-label {
+    position: relative;
+    padding-left: 30px; 
+    cursor: pointer;
+    display: inline-block;
+}
+.form-check-input[type="radio"] + .form-check-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.form-check-input[type="radio"] + .form-check-label::after {
+    content: '\2713'; 
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: transparent; 
+}
+.form-check-input[type="radio"]:checked + .form-check-label::before {
+    background-color: #363636; 
+    border-color: black;
+}
+.form-check-input[type="radio"]:checked + .form-check-label::after {
+    color: white;
+}
+.form-check-label i.bi-star-fill {
+    color: gold;
+    margin-right: 8px; 
+    font-size: 1.2rem; 
+}
+/* ---------------------------- Avtivities Section ---------------------------- */
+.activities-section {
+    padding: 20px;
+}
+.activities-section h4 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+.activity-card {
+    position: relative;
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    background-color: #ffffff;
+}
+.activity-card.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.activity-card.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+}
+.love-icon {
+    position: absolute;
+    top: 10px; 
+    right: 20px; 
+    font-size: 1.5rem; 
+    color: rgba(0, 0, 0, 0.5); 
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.love-icon.selected {
+    color: red; 
+}
+.activity-image {
+    width: 30%; 
+    object-fit: cover;
+    height: auto; 
+}
+.activity-details {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.activity-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.activity-category {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+.activity-description {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+}
+.activity-ratings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+.activity-ratings .ratings {
+    margin-right: 5px; 
+    font-size: 1rem; 
+    color: #ffd700; 
+}
+.explore-button {
+    margin-left: auto; 
+    padding: 8px 16px;
+    background-color: #636363;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.explore-button:hover {
+    background-color: #323131;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------------------------- back to top button ---------------------------- */
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #7d7d7d; 
+    color: white; 
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.back-to-top:hover {
+    opacity: 1.0; 
+    background-color: #242424;
+}
+.back-to-top i {
+    font-size: 24px; 
+}
+
+/* --------------------------Footer Styles ----------------------------*/
+.footer {
+    padding: 20px 0;
+    background-color: #000000;
+}
+
+.footer .social-icons a {
+    color: #000000;
+    margin-right: 15px;
+    font-size: 2rem; /* Increased icon size */
+}
+
+.footer .social-icons a:hover {
+    color: #0804d4;
+}
+
+.footer .contact-info {
+    margin: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .back-button {
+        top: 125px;
+        width: 40px;
+        height: 40px;
+    }
+    /* ---------------------------- Header Section ---------------------------- */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .scrollable-nav {
+        width: 100%;
+    }
+
+    .scrollable-nav ul {
+        flex-direction: row;
+    }
+
+    .scrollable-nav li {
+        margin-right: 20px;
+    }
+    /* ---------------------------- Title Section ---------------------------- */
+    .title-section h1 {
+        font-size: 2.5drem; 
+    }
+    .title-section p.description-text {
+        font-size: 0.875rem; 
+        padding: 0 10px; 
+    }
+
+    /* ---------------------------- Carousel Section ---------------------------- */
+    .carousel-item img {
+        height: 300px; 
+    }
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        width: 40px; 
+        height: 40px; 
+        background-size: 50%; 
+    }
+    .carousel-caption {
+        width: 300px;
+        height: 75px;
+        top: 75%;
+        left: 46%;
+    }
+    .carousel-caption h5 {
+        font-size: 1.8rem; 
+    }
+
+    /* ---------------------------- Activity Section ---------------------------- */
+    .activity-card {
+        flex-direction: column; 
+        transform: translateX(0);
+    }
+    .activity-image {
+        width: 100%; 
+        height: 235px;
+    }
+    .activity-details {
+        padding: 15px; 
+    }
+    .activity-card.hidden {
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    .love-icon {
+        position: absolute;
+        top: 245px; 
+        right: 20px; 
+        font-size: 1.5rem; 
+        color: rgba(0, 0, 0, 0.5); 
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .back-to-top {
+        bottom: 40px; 
+        right: 30px; 
+        width: 50px;  
+        height: 50px;
+    }
+}
+

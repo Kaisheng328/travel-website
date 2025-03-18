@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--Quicksand);
+}
+/* General Styles */
+body {
+    background-color: #F0F0F0 !important;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #b7f2f7; 
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+header .logo a {
+    font-size: 2.0rem;
+    font-weight: bold;
+    color: #000000; 
+    text-decoration: none; 
+}
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #7d7d7d; 
+    color: white; 
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.back-to-top:hover {
+    opacity: 1.0; 
+    background-color: #242424;
+}
+.back-to-top i {
+    font-size: 24px; 
+}
+
+header .scrollable-nav {
+    margin-left: auto; 
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 15px;
+    background-color: #b7f2f7; 
+    border-radius: 8px;
+}
+.scrollable-nav::-webkit-scrollbar {
+    display: none; 
+}
+
+.scrollable-nav {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    overflow-y: hidden; 
+}
+
+.scrollable-nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.scrollable-nav li {
+    margin-right: 20px;
+}
+
+.scrollable-nav a {
+    color: #ffffff;
+    text-decoration: none; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+
+.scrollable-nav a:hover,
+.scrollable-nav a.active {
+    color: #ffffff !important;
+    background-color: #000000; 
+}
+
+.scrollable-nav .sign-in {
+    margin-left: auto;
+}
+
+
+
+/* Footer Styles */
+.footer {
+    padding: 20px 0;
+    background-color: #000000;
+}
+
+.footer .social-icons a {
+    color: #000000;
+    margin-right: 15px;
+    font-size: 2rem; /* Increased icon size */
+}
+
+.footer .social-icons a:hover {
+    color: #0804d4;
+}
+
+.footer .contact-info {
+    margin: 20px 0;
+}
+
+
+
+/* About Us Section */
+#about-us-section {
+    display: none; /* Ensure it’s hidden by default */
+    position: relative; /* Allow positioning of child elements */
+}
+
+.nav-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #fff; /* Adjust based on your navbar background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for the navbar */
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right */
+}
+
+.hero-section {
+    position: relative;
+    height: 60vh;
+    background-image: url('https://www.gravelspringsltd.com/assets/uploads/opportunity_banner2023062927442824071688076644.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
+.about-content h2 {
+    color: #fbfbfb;
+    margin-bottom: 1.5rem;
+}
+
+.go-back-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background-color: #ffffff; 
+    color: #000000; 
+    border: none; 
+    border-radius: 25px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.go-back-btn:hover {
+    background-color: #ffffff; 
+    color: #000000; 
+}
+.container {
+    padding: 20px;
+}
+
+.package-details {
+    max-width: 900px;
+    margin: auto;
+    background: linear-gradient(#ffffff,#f3eed8);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.package-details img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.package-details h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.package-details p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.package-price {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.schedule {
+    margin-top: 40px;
+}
+
+.schedule h3 {
+    font-size: 2em;
+    color: #333;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+}
+
+.schedule ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.schedule li {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(#f2f5e5,#ffffff);
+    border: 1px solid #F2EFE5;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.schedule li img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.schedule li p {
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+
+#countdown {
+    display: inline-block;
+    background: linear-gradient(#765fac,#ffffff);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#countdown span {
+    display: inline-block;
+    min-width: 70px;
+}
+
+#discount-msg {
+    font-size: 1.2em;
+    color: #4CAF50;
+    margin-top: 10px;
+}
