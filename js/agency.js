@@ -1,31 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-    const username = localStorage.getItem('username');
-    const signInModal = document.getElementById('signInModal');
-    const closeButton = document.querySelector('.close');
-  
-    if (!username) {
-        signInModal.style.display = 'block'; // Show modal if not logged in
-    }
-  
-    // Close modal when the close button is clicked
-    closeButton.addEventListener('click', function () {
-        signInModal.style.display = 'none';
-    });
-  
-    // Login Form Submission
-    document.getElementById('loginForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        
-        const email = document.getElementById('loginEmail').value;
-        localStorage.setItem('username', email); // Save username
-        signInModal.style.display = 'none'; // Close modal after login
-        alert('Login successful!');
-        location.reload(); // Reload to apply login changes
-    });
-  });
-
-document.addEventListener('DOMContentLoaded', function () {
     // Get elements
     const headerContent = document.querySelector('.header-content');
     const scrollDown = document.querySelector('.scroll-down');
@@ -107,3 +81,4 @@ backToTopButton.addEventListener("click", function() {
         behavior: "smooth" // Smooth scroll to top
     });
 });
+
