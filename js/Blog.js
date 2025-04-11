@@ -41,14 +41,6 @@ backToTopButton.addEventListener("click", function() {
         behavior: "smooth" // Smooth scroll to top
     });
 });
-document.addEventListener('DOMContentLoaded', function () {
-  const username = localStorage.getItem('username');
-  const signInModal = document.getElementById('signInModal');
-  const closeButton = document.querySelector('.close');
-
-  if (!username) {
-      signInModal.style.display = 'block'; // Show modal if not logged in
-  }
 
   // Close modal when the close button is clicked
   closeButton.addEventListener('click', function () {
@@ -124,3 +116,5 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionObserver.observe(section);
   });
 });
+
+
