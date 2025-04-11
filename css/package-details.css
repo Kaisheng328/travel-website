@@ -292,21 +292,31 @@ header .scrollable-nav {
 }
 
 
+/*Countdown section*/
+#countdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .offer-heading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  #countdown {
+    background: linear-gradient(to right, #ff7f50, #ff6b6b); /* Your updated color */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
 
-#countdown {
-    display: inline-block;
-    background: linear-gradient(#765fac,#ffffff);
-    color: rgb(0, 0, 0);
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-#countdown span {
-    display: inline-block;
-    min-width: 70px;
-}
 
 #discount-msg {
     font-size: 1.2em;

@@ -38,68 +38,78 @@
 
     <div class="container">
         <section id="plans-packages" class="section">
-            <h2>Choose Your Travel Packages</h2>
-            <div class="package-container">
-                <!-- Package 1: Kuala Lumpur -->
-                <div class="package" data-package-id="kuala-lumpur">
-                    <a href="package-details.html?package=kuala-lumpur">
-                        <img src="https://cdn.pixabay.com/photo/2013/08/09/05/58/kuala-lumpur-170985_1280.jpg"
-                            alt="Kuala Lumpur">
-                        <h3>Kuala Lumpur (3D2N)</h3>
-                        <p>Explore the vibrant capital of Malaysia with its iconic Petronas Towers, bustling markets,
-                            and rich cultural heritage.</p>
-                        <p class="package-price">RM1,099</p>
-                    </a>
-                    <button class="favorite-btn" onclick="handleFavoriteClick('kuala-lumpur')">&#10084;</button>
+            <section class="hero-banner">
+                <div class="hero-text">Choose Your Travel Packages</div>
+            </section>
+                        
+            <div class="container"> <!-- Keep .container only for the package items -->
+                <div class="package-container">
+                    <!-- Package 1: Kuala Lumpur -->
+                    <div class="package" data-package-id="kuala-lumpur">
+                        <a href="package-details.html?package=kuala-lumpur">
+                            <img src="https://www.malaysia-china.com.my/wp-content/uploads/2022/02/kl-night-view_7.jpg"
+                                alt="Kuala Lumpur">
+                            <h3>Kuala Lumpur</h3>
+                            <h5>(3 Days 2 Nights)</h5>
+                            <p>Experience the lively charm of Kuala Lumpur! Marvel at the Petronas Twin Towers, 
+                                wander through vibrant street markets, and savor authentic local cuisine.</p>
+                            <p class="package-price">RM1,099</p>
+                        </a>
+                        <button class="favorite-btn" onclick="handleFavoriteClick('kuala-lumpur')">&#10084;</button>
+                    </div>
+                    <!-- Package 2: Langkawi -->
+                    <div class="package" data-package-id="langkawi">
+                        <a href="package-details.html?package=langkawi">
+                            <img src="https://themalayapost.my/wp-content/uploads/2023/11/a9ebceb6-4e24-48fb-9ad6-16572c9576aa.jpg"
+                                alt="Langkawi">
+                            <h3>Langkawi</h3>
+                            <h5>(4 Days 3 Nights)</h5>
+                            <p>Escape to the tropical charm of Langkawi! Enjoy soft sandy shores, 
+                                swim in clear blue waters, and unwind at a scenic island resort.</p>
+                            <p class="package-price">RM1,199</p>
+                        </a>
+                        <button class="favorite-btn" onclick="handleFavoriteClick('langkawi')">&#10084;</button>
+                    </div>
+                    <!-- Package 3: Penang -->
+                    <div class="package" data-package-id="penang">
+                        <a href="package-details.html?package=penang">
+                            <img src="https://i.ex-cdn.com/vntravellive.com/files/news/2023/10/13/den-thien-duong-bien-dao-penang-nen-di-nhung-dau-112140.jpg"
+                                alt="Penang">
+                            <h3>Penang</h3>
+                            <h5>(4 Days 3 Nights)</h5>
+                            <p>Enjoy the best of Penang! Try delicious local food, walk through 
+                                beautiful old streets, and have fun in a city full of culture and color.</p>
+                            <p class="package-price">RM999</p>
+                        </a>
+                        <button class="favorite-btn" onclick="handleFavoriteClick('penang')">&#10084;</button>
+                    </div>
+                    <!-- Package 4: Sabah -->
+                    <div class="package" data-package-id="sabah">
+                        <a href="package-details.html?package=sabah">
+                            <img src="https://bimp-eaga.asia/sites/default/files/2024-02/iStock-153570866.jpg"
+                                alt="Sabah">
+                            <h3>Sabah</h3>
+                            <h5>(4 Days 3 Nights)</h5>
+                            <p>Get ready for adventure in Sabah! Climb the famous Mount Kinabalu, 
+                                walk through beautiful rainforests, and see unique animals in the wild.</p>
+                            <p class="package-price">RM1,299</p>
+                        </a>
+                        <button class="favorite-btn" onclick="handleFavoriteClick('sabah')">&#10084;</button>
+                    </div>
+                    <!-- Package 5: Melaka -->
+                    <div class="package" data-package-id="melaka">
+                        <a href="package-details.html?package=melaka">
+                            <img src="https://media.cntravellerme.com/photos/65d748e1141d7fa040c9767a/master/w_1600%2Cc_limit/1227193133"
+                                alt="Melaka">
+                            <h3>Melaka</h3>
+                            <h5>(3 Days 2 Nights)</h5>
+                            <p>Discover the charm of Melaka! Explore colorful old streets, see historic 
+                                Dutch and Portuguese buildings, and enjoy a peaceful cruise along the river.</p>
+                            <p class="package-price">RM799</p>
+                        </a>
+                        <button class="favorite-btn" onclick="handleFavoriteClick('melaka')">&#10084;</button>
+                    </div>
                 </div>
-                <!-- Package 2: Langkawi -->
-                <div class="package" data-package-id="langkawi">
-                    <a href="package-details.html?package=langkawi">
-                        <img src="https://cdn.pixabay.com/photo/2018/03/18/16/51/nature-3237434_1280.jpg"
-                            alt="Langkawi">
-                        <h3>Langkawi (4D3N)</h3>
-                        <p>Relax on the beautiful beaches of Langkawi, an island paradise known for its clear waters,
-                            luxury resorts, and stunning landscapes.</p>
-                        <p class="package-price">RM1,199</p>
-                    </a>
-                    <button class="favorite-btn" onclick="handleFavoriteClick('langkawi')">&#10084;</button>
-                </div>
-                <!-- Package 3: Penang -->
-                <div class="package" data-package-id="penang">
-                    <a href="package-details.html?package=penang">
-                        <img src="https://cdn.pixabay.com/photo/2019/08/17/07/38/georgetown-4411602_1280.jpg"
-                            alt="Penang">
-                        <h3>Penang (4D3N)</h3>
-                        <p>Discover the historical charm of Penang, famous for its street food, colonial architecture,
-                            and cultural diversity.</p>
-                        <p class="package-price">RM999</p>
-                    </a>
-                    <button class="favorite-btn" onclick="handleFavoriteClick('penang')">&#10084;</button>
-                </div>
-                <!-- Package 4: Sabah -->
-                <div class="package" data-package-id="sabah">
-                    <a href="package-details.html?package=sabah">
-                        <img src="https://cdn.pixabay.com/photo/2020/07/11/03/46/sabah-5392664_1280.jpg" alt="Sabah">
-                        <h3>Sabah (4D3N)</h3>
-                        <p>Embark on an adventure in Sabah, home to Mount Kinabalu, lush rainforests, and incredible
-                            wildlife.</p>
-                        <p class="package-price">RM1,299</p>
-                    </a>
-                    <button class="favorite-btn" onclick="handleFavoriteClick('sabah')">&#10084;</button>
-                </div>
-                <!-- Package 5: Melaka -->
-                <div class="package" data-package-id="melaka">
-                    <a href="package-details.html?package=melaka">
-                        <img src="https://cdn.pixabay.com/photo/2015/09/25/10/04/dutch-square-957004_1280.jpg"
-                            alt="Melaka">
-                        <h3>Melaka (3D2N)</h3>
-                        <p>Explore the historical city of Melaka, known for its colonial architecture, vibrant street
-                            life, and rich heritage.</p>
-                        <p class="package-price">RM799</p>
-                    </a>
-                    <button class="favorite-btn" onclick="handleFavoriteClick('melaka')">&#10084;</button>
-                </div>
-            </div>
         </section>
 
         <div id="signInModal" class="modal" style="display: none;">
@@ -165,38 +175,40 @@
             <i class="bi bi-arrow-up"></i>
         </button>
         <!-- Footer -->
-    <footer class="footer text-white mt-5 pt-5 text-center">
-        <div class="container">
-            <!-- Clickable About Us Link -->
-            <a href="javascript:void(0);" onclick="showAboutUs(event)" class="text-white">
-                <h5>About Us</h5>
-            </a>
-            <div id="about-us-content" style="display: none;">
-                <p>TravelGO is a superb website to help you discover the best travel destinations and activities in
-                    Malaysia. We provide
-                    the best services in Malaysia and detailed information about any place.</p>
+        <footer class="footer text-white mt-5 pt-5 text-center">
+            <div class="container">
+                <!-- Clickable About Us Link with Underline -->
+                <a href="javascript:void(0);" onclick="showAboutUs(event)" class="about-us-link text-white">
+                    <h5>About Us</h5>
+                </a>
+                <div id="about-us-content" style="display: none;">
+                    <p>TravelGO is a superb website to help you discover the best travel destinations and activities in
+                        Malaysia. We provide the best services in Malaysia and detailed information about any place.</p>
+                </div>
+
+                <h5>Don't wait any longer. Contact us!</h5>
+                <p>Email: support@travelgo.com | Phone: +60 1111 8888</p>
+
+                <!-- Social Media Icons -->
+                <div class="social-icons my-3">
+                    <a href="https://www.facebook.com" class="text-white mx-2" target="_blank">
+                        <i class="bi bi-facebook" style="font-size: 2rem;"></i>
+                    </a>
+                    <a href="https://www.instagram.com" class="text-white mx-2" target="_blank">
+                        <i class="bi bi-instagram" style="font-size: 2rem;"></i>
+                    </a>
+                    <a href="https://www.twitter.com" class="text-white mx-2" target="_blank">
+                        <i class="bi bi-twitter-x" style="font-size: 2rem;"></i>
+                    </a>
+                </div>
             </div>
 
-            <h5>Don't wait any longer. Contact us!</h5>
-            <p>Email: support@travelgo.com | Phone: +60 1111 8888</p>
-
-            <div class="social-icons my-3">
-                <a href="https://www.facebook.com" class="text-white mx-2" target="_blank">
-                    <i class="bi bi-facebook" style="font-size: 2rem;"></i>
-                </a>
-                <a href="https://www.instagram.com" class="text-white mx-2" target="_blank">
-                    <i class="bi bi-instagram" style="font-size: 2rem;"></i>
-                </a>
-                <a href="https://www.twitter.com" class="text-white mx-2" target="_blank">
-                    <i class="bi bi-twitter-x" style="font-size: 2rem;"></i>
-                </a>
+            <!-- Long White Line Above Copyright -->
+            <div class="footer-bottom">
+                <div class="footer-line"></div> <!-- Long White Line -->
+                <p>&copy; 2025 TravelGO. All Copyrights reserved.</p>
             </div>
-        </div>
-
-        <div class="footer-bottom mt-4 pt-4 border-top text-center">
-            <p>&copy; 2025 TravelGO. All Copyrights reserved.</p>
-        </div>
-    </footer>
+        </footer>
 
         <script src="../js/SignIn.js"></script>
         <script src="../js/plans-packages.js"></script>

@@ -3,37 +3,37 @@ const packages = [
     {
         id: 'kuala-lumpur',
         title: 'Kuala Lumpur (3D2N)',
-        description: 'Explore the vibrant capital of Malaysia with its iconic Petronas Towers, bustling markets, and rich cultural heritage.',
+        description: 'Explore Malaysia’s exciting capital! Visit the iconic Petronas Towers, shop at lively street markets, and enjoy the city’s unique blend of culture and modern life.',
         price: 'RM1,099',
-        imageUrl: 'https://cdn.pixabay.com/photo/2013/08/09/05/58/kuala-lumpur-170985_1280.jpg'
+        imageUrl: 'https://www.malaysia-china.com.my/wp-content/uploads/2022/02/kl-night-view_7.jpg'
     },
     {
         id: 'langkawi',
         title: 'Langkawi (4D3N)',
-        description: 'Relax on the beautiful beaches of Langkawi, an island paradise known for its clear waters, luxury resorts, and stunning landscapes.',
+        description: 'Relax in Langkawi! Enjoy soft beaches, clear blue seas, and amazing island views—perfect for your dream getaway.',
         price: 'RM1,199',
-        imageUrl: 'https://cdn.pixabay.com/photo/2018/03/18/16/51/nature-3237434_1280.jpg'
+        imageUrl: 'https://themalayapost.my/wp-content/uploads/2023/11/a9ebceb6-4e24-48fb-9ad6-16572c9576aa.jpg'
     },
     {
         id: 'penang',
         title: 'Penang (4D3N)',
-        description: 'Discover the historical charm of Penang, famous for its street food, colonial architecture, and cultural diversity.',
+        description: 'Explore Penang’s rich culture and food! Taste delicious street food and stroll through the colorful streets of George Town.',
         price: 'RM999',
-        imageUrl: 'https://cdn.pixabay.com/photo/2019/08/17/07/38/georgetown-4411602_1280.jpg'
+        imageUrl: 'https://i.ex-cdn.com/vntravellive.com/files/news/2023/10/13/den-thien-duong-bien-dao-penang-nen-di-nhung-dau-112140.jpg'
     },
     {
         id: 'sabah',
         title: 'Sabah (4D3N)',
-        description: 'Embark on an adventure in Sabah, home to Mount Kinabalu, lush rainforests, and incredible wildlife.',
+        description: 'Discover Sabah’s wild side! Climb majestic Mount Kinabalu, wander through green rainforests, and spot amazing animals up close.',
         price: 'RM1,299',
-        imageUrl: 'https://cdn.pixabay.com/photo/2020/07/11/03/46/sabah-5392664_1280.jpg'
+        imageUrl: 'https://bimp-eaga.asia/sites/default/files/2024-02/iStock-153570866.jpg'
     },
     {
         id: 'melaka',
         title: 'Melaka (3D2N)',
-        description: 'Explore the historical city of Melaka, known for its colonial architecture, vibrant street life, and rich heritage.',
+        description: 'Step into the charm of Melaka! Explore colorful streets, see old Dutch and Portuguese buildings, and enjoy the city’s rich heritage.',
         price: 'RM799',
-        imageUrl: 'https://cdn.pixabay.com/photo/2015/09/25/10/04/dutch-square-957004_1280.jpg'
+        imageUrl: 'https://media.cntravellerme.com/photos/65d748e1141d7fa040c9767a/master/w_1600%2Cc_limit/1227193133'
     }
 ];
 
@@ -190,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', handleFavoriteClick);
     });
 });
+
 // Get the back to top button
 const backToTopButton = document.getElementById("backToTop");
 
@@ -209,3 +210,29 @@ backToTopButton.addEventListener("click", function() {
         behavior: "smooth" // Smooth scroll to top
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const username = localStorage.getItem('username');
+    const signInModal = document.getElementById('signInModal');
+    const closeButton = document.querySelector('.close');
+
+    if (!username) {
+        signInModal.style.display = 'block'; // Show modal if not logged in
+    }
+
+    // Close modal when the close button is clicked
+    closeButton.addEventListener('click', function () {
+        signInModal.style.display = 'none';
+    });
+
+    // Login Form Submission
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        
+        const email = document.getElementById('loginEmail').value;
+        localStorage.setItem('username', email); // Save username
+        signInModal.style.display = 'none'; // Close modal after login
+        alert('Login successful!');
+        location.reload(); // Reload to apply login changes
+    });
+});
+
