@@ -42,23 +42,6 @@ backToTopButton.addEventListener("click", function() {
     });
 });
 
-  // Close modal when the close button is clicked
-  closeButton.addEventListener('click', function () {
-      signInModal.style.display = 'none';
-  });
-
-  // Login Form Submission
-  document.getElementById('loginForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-      
-      const email = document.getElementById('loginEmail').value;
-      localStorage.setItem('username', email); // Save username
-      signInModal.style.display = 'none'; // Close modal after login
-      alert('Login successful!');
-      location.reload(); // Reload to apply login changes
-  });
-});
-
 function showAboutUs(event) {
   event.preventDefault();
   document.querySelector('.hero-section').style.display = 'none';
