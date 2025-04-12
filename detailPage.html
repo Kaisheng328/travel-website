@@ -7,14 +7,14 @@
     <title>TravelGO - Detailed Activity</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/detailPage.css">
-    <link rel="stylesheet" href="../css/SignIn.css">
+    <link rel="stylesheet" href="./detailPage.css">
+    <link rel="stylesheet" href="./SignIn.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header - Unchanged -->
     <header>
         <div class="logo">
             <a href="mainpage.html">TravelGO</a>
@@ -36,14 +36,14 @@
     </header>
 
     <!-- Back Button -->
-    <a href="javascript:history.back()" class="back-button">
+    <a href="javascript:history.back()" class="back-button" aria-label="Go back">
         <i class="bi bi-arrow-left"></i>
     </a>
 
-    <!-- title section -->
+    <!-- Title Section -->
     <section class="container my-5">
-        <div class="row">
-            <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
                 <div id="activity-info">
                     <h1 id="activity-title" class="mb-3"></h1>
                     <p id="activity-category" class="mb-2"></p>
@@ -52,40 +52,47 @@
             </div>
         </div>
     </section>
-    <hr class="my-4" style="border: 1px solid #000000;">
+    
+    <hr class="section-divider my-4">
 
     <!-- About Section -->
-    <div id="about-section" class="container my-4">
-        <div class="row">
-            <div class="col-10 col-md-10 about-content">
-                <h2>About</h2>
-                <p id="long-description"></p>
-                <p id="operating-hour" class="mt-3"></p>
-                <a href="#" id="see-more-link">More hours</a>
-                <a href="#" id="collapse-link" style="display:none;">Hide hours</a>
-                <p id="open-now-status"></p>
+    <div id="about-section" class="detail-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    <div class="about-content">
+                        <h2 class="section-heading">About</h2>
+                        <p id="long-description"></p>
+                        <div id="operating-hour" class="mt-4"></div>
+                        <a href="#" id="see-more-link">More hours</a>
+                        <a href="#" id="collapse-link" style="display:none;">Hide hours</a>
+                        <p id="open-now-status" class="mt-3 px-3 py-2 d-inline-block rounded"></p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-none d-md-block"></div>
             </div>
-            <div class="col-2 col-md-2"></div>
         </div>
     </div>
 
     <!-- Images Section -->
-    <div id="images-section" class="container my-4">
-        <div class="row">
-            <div class="col-2 col-md-2"></div>
-            <div class="col-10 col-md-10 about-content">
-                <h2>A Visual Journey</h2>
-                <div class="row">
-                    <div id="carouselExampleIndicators" class="carousel slide">
-                        <div class="carousel-inner" id="carousel-images"></div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        </a>
+    <div id="images-section" class="detail-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 d-none d-md-block"></div>
+                <div class="col-12 col-md-9">
+                    <div class="about-content">
+                        <h2 class="section-heading">A Visual Journey</h2>
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" id="carousel-images"></div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -93,59 +100,67 @@
     </div>
 
     <!-- Video Section -->
-    <div id="video-section" class="container my-4">
-        <div class="row">
-            <div class="col-10 col-md-10 about-content">
-                <h2>A Sneak Peek into the Experience</h2>
-                <div id="video-section-content"></div>
+    <div id="video-section" class="detail-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    <div class="about-content">
+                        <h2 class="section-heading">A Sneak Peek into the Experience</h2>
+                        <div id="video-section-content"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 d-none d-md-block"></div>
             </div>
-            <div class="col-2 col-md-2"></div>
         </div>
     </div>
 
     <!-- Map Section -->
-    <div id="map-section" class="container my-4">
-        <div class="row">
-            <div class="col-2 col-md-2"></div>
-            <div class="col-10 col-md-10 about-content">
-                <h2>We are Here</h2>
-                <h6 id="activity-address"></h6>
-                <div id="map" style="height: 400px;"></div>
+    <div id="map-section" class="detail-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 d-none d-md-block"></div>
+                <div class="col-12 col-md-9">
+                    <div class="about-content">
+                        <h2 class="section-heading">We are Here</h2>
+                        <h6 id="activity-address" class="mb-4"></h6>
+                        <div id="map"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Comment Section -->
-    <div id="comment-section" class="container-fluid my-4">
+    <div id="comment-section" class="container-fluid my-5 py-5">
         <div class="row justify-content-center">
-            <div class="col-12">
-                <hr class="my-4" style="border: 1px solid #000000;">
-                <h2 class="text-center mb-4">Comments</h2>
-                <h5 style="text-align: right;">Slide for more -></h5>
+            <div class="col-12 col-lg-10 text-center">
+                <hr class="section-divider mb-5">
+                <h2 class="mb-4">Visitor Comments</h2>
+                <h5 style="text-align: right;">Slide for more <i class="bi bi-arrow-right"></i></h5>
 
                 <!-- Display Comments -->
-                <div id="comments-display" class="d-flex overflow-auto">
-                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                <div id="comments-display" class="d-flex overflow-auto pb-2">
+                    <div class="comment-item">
                         <h5 class="comment-author">John Doe</h5>
                         <p class="comment-text">This is a great place to visit! Highly recommended.</p>
                         <p class="text-muted">Posted on: 2024-08-16</p>
                     </div>
-                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                    <div class="comment-item">
                         <h5 class="comment-author">Jane Smith</h5>
                         <p class="comment-text">Had a wonderful time here with my family.</p>
                         <p class="text-muted">Posted on: 2024-08-15</p>
                     </div>
-                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                    <div class="comment-item">
                         <h5 class="comment-author">Alice Johnson</h5>
                         <p class="comment-text">A memorable experience, would love to come back!</p>
                         <p class="text-muted">Posted on: 2024-08-14</p>
                     </div>
-                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                    <div class="comment-item">
                         <h5 class="comment-author">Anthony</h5>
                         <p class="comment-text">Highly recommended to this place. I love it!</p>
                         <p class="text-muted">Posted on: 2024-08-14</p>
                     </div>
-                    <div class="comment-item mr-3 p-3 border rounded" style="min-width: 300px;">
+                    <div class="comment-item">
                         <h5 class="comment-author">Nunez</h5>
                         <p class="comment-text">What a special place. First time been here.</p>
                         <p class="text-muted">Posted on: 2024-08-14</p>
@@ -156,10 +171,11 @@
     </div>
 
     <!-- Back to top button -->
-    <button id="backToTop" class="back-to-top">
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="bi bi-arrow-up"></i>
     </button>
 
+    <!-- Sign In Modal - Unchanged -->
     <div id="signInModal" class="modal" style="display: none;">
         <div class="main-container">
             <span class="close">&times;</span>
@@ -217,11 +233,8 @@
             </div>
         </div>
     </div>
-    <!-- Back to top button -->
-    <button id="backToTop" class="back-to-top">
-        <i class="bi bi-arrow-up"></i>
-    </button>
-    <!-- Footer -->
+
+    <!-- Footer - Unchanged -->
     <footer class="footer text-white mt-5 pt-5 text-center">
         <div class="container">
             <!-- Clickable About Us Link -->
@@ -254,14 +267,12 @@
             <p>&copy; 2025 TravelGO. All Copyrights reserved.</p>
         </div>
     </footer>
-
-    <!-- Please don't use my api key, Thank you for your collaboration-->
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/detailPage.js"></script>
-    <script src="../js/SignIn.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./detailPage.js"></script>
+    <script src="./SignIn.js"></script>
 </body>
 
 </html>

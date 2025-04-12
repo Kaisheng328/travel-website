@@ -107,100 +107,37 @@ header .scrollable-nav {
   margin-left: auto;
 } 
 
-/* top design */
-.topdesign{
-    padding: 4.5rem 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://www.outlooktravelmag.com/media/malaysia-1-1582543566.profileImage.2x-scaled.webp) center/cover no-repeat fixed;
-
-}
-.topdesign .title h2,
-.topdesign .title p {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Dark shadow for better readability */
-    color: #fff; /* Ensure text color contrasts well */
-}
-.topdesign .title h2 {
-    font-size: 2.4rem;
-    font-family: var(--Playfair);
-}
-.topdesign .title p {
-    text-transform: uppercase;
-    padding: 0.6rem 0;
+/* Hero page */
+.blog-hero-section {
+  background-image: url('https://leaveyourdailyhell.com/wp-content/uploads/2023/05/Malaysia-5.jpg');
+  background-size:cover;
+  background-position: center;
+  height: 100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white
 }
 
-/* design */
-.design{
-    padding: 4.5rem 0;
+.blog-hero-content{
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
 }
-.title{
-    text-align: center;
-    padding: 1rem 0;
+
+.blog-hero-content h1{
+  font-family: 'Imprint MT Shadow', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
-.title h2{
-    font-family: var(--Playfair);
-    font-size: 2.4rem;
+
+.blog-hero-content p{
+  font-family: 'Bradley Hand ITC', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
 }
-.title p{
-    text-transform: uppercase;
-    padding: 0.6rem 0;
-}
-.design-content{
-    margin: 2rem 0;
-}
-.design-item{
-    cursor: pointer;
-    margin: 1.5rem 0;
-    background-color: #C7C8CC;
-    transition: background-color 0.5s ease;
-    padding: 1rem;
-    border-radius: 8px;
-}
-.design-item:hover {
-    background-color: #F2EFE5;
-}
-.design-img{
-    position: relative;
-    overflow: hidden;
-}
-.design-img::after{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-}
-.design-img img{
-    transition:  all 0.5s ease;
-}
-.design-item:hover img{
-    transform: scale(1.2);
-}
-.design-img span:first-of-type{
-    position: absolute;
-    z-index: 1;
-    top: 10px;
-    left: 10px;
-    background: var(--exDark);
-    color: #fff;
-    padding: 0.25rem 1rem;
-}
-.design-img span:last-of-type{
-    position: absolute;
-    z-index: 1;
-    bottom: 10px;
-    right: 10px;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-.design-title{
-    padding: 1rem;
-    font-size: 1.2rem;
-    text-align: center;
-    width: 70%;
-    margin: 0 auto;
-}
+
 .back-to-top {
   position: fixed;
   bottom: 50px;
@@ -254,109 +191,6 @@ header .scrollable-nav {
     opacity: 0.8;
 }
 
-/*--------------------------------------------------------------
-# Events Section
---------------------------------------------------------------*/
-.events {
-    --default-color: #ffffff;
-    --background-color: #000000;
-    --heading-color: #ffffff;
-    padding: 80px 0;
-    position: relative;
-  }
-  
-  .events .slider-bg {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-  }
-  
-  .events:before {
-    content: "";
-    background-color: color-mix(in srgb, var(--background-color), transparent 30%);
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-  }
-  
-  .events .section-title h2 {
-    color: #ffffff;
-  }
-  
-  .events .container {
-    position: relative;
-    z-index: 3;
-  }
-  
-  .events .event-item h3 {
-    font-weight: 700;
-    font-size: 30px;
-  }
-  
-  .events .event-item .price {
-    font-size: 26px;
-    font-family: var(--default-font);
-    font-weight: 700;
-    margin-bottom: 15px;
-  }
-  
-  .events .event-item .price span {
-    border-bottom: 2px solid var(--accent-color);
-  }
-  
-  .events .event-item ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .events .event-item ul li {
-    padding-bottom: 10px;
-  }
-  
-  .events .event-item ul i {
-    font-size: 20px;
-    padding-right: 4px;
-    color: var(--accent-color);
-  }
-  
-  .events .event-item p:last-child {
-    margin-bottom: 0;
-  }
-  
-  .events .swiper-wrapper {
-    height: auto;
-  }
-  
-  .events .swiper-pagination {
-    margin-top: 30px;
-    position: relative;
-  }
-  
-  .events .swiper-pagination .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: color-mix(in srgb, var(--default-color), transparent 70%);
-    opacity: 1;
-  }
-  
-  .events .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: var(--accent-color);
-  }
-
-.social-links a:hover{
-    background: #fff;
-    color: var(--exDark);
-}
-.footer span{
-    margin-top: 1rem;
-    display: block;
-    font-family: var(--Playfair);
-    letter-spacing: 2px;
-}
 
 /* Media Queries */
 @media screen and (min-width: 540px){
@@ -411,7 +245,10 @@ header .scrollable-nav {
     }
     .play-button{
         max-width: auto;
-    }   
+    }  
+    .parallax-content {
+      max-width: 50%;
+    }
 
 }
 
@@ -425,11 +262,22 @@ header .scrollable-nav {
         column-gap: 3rem;
         align-items: center;
     }
+    .parallax-content {
+      max-width: 50%;
+    }
 }
 
 @media screen and (min-width: 1200px){
     .design-content{
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .masonry-grid {
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    .parallax-content {
+      max-width: 50%;
     }
 }
 
@@ -561,98 +409,6 @@ header .scrollable-nav {
     100% { transform: translateX(0%); } /* Loop back to first image */
   }
 
-  /* Events */
-  .events {
-    --default-color: #ffffff;
-    --background-color: #E3E1D9;
-    --heading-color: #F2EFE5;
-    padding: 80px 0;
-    position: relative;
-  }
-  
-  .events .slider-bg {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-  }
-  
-  .events:before {
-    content: "";
-    background-color: color-mix(in srgb, var(--background-color), transparent 30%);
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-  }
-  
-  .events .section-title h2 {
-    color: #ffffff;
-  }
-  
-  .events .container {
-    position: relative;
-    z-index: 3;
-  }
-  
-  .events .event-item h3 {
-    font-weight: 700;
-    font-size: 30px;
-  }
-  
-  .events .event-item .price {
-    font-size: 26px;
-    font-family: var(--default-font);
-    font-weight: 700;
-    margin-bottom: 15px;
-  }
-  
-  .events .event-item .price span {
-    border-bottom: 2px solid var(--accent-color);
-  }
-  
-  .events .event-item ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .events .event-item ul li {
-    padding-bottom: 10px;
-  }
-  
-  .events .event-item ul i {
-    font-size: 20px;
-    padding-right: 4px;
-    color: var(--accent-color);
-  }
-  
-  .events .event-item p:last-child {
-    margin-bottom: 0;
-  }
-  
-  .events .swiper-wrapper {
-    height: auto;
-  }
-  
-  .events .swiper-pagination {
-    margin-top: 30px;
-    position: relative;
-  }
-  
-  .events .swiper-pagination .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: color-mix(in srgb, var(--default-color), transparent 70%);
-    opacity: 1;
-  }
-  
-  .events .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: var(--accent-color);
-  }
-
-
 /* About Us Section */
 #about-us-section {
   display: none; 
@@ -718,4 +474,242 @@ header .scrollable-nav {
 
 .container {
   padding: 20px;
+}
+
+/* Masonry Grid Layout */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns */
+  gap: 15px; /* Smaller gap between items */
+  padding: 15px;
+}
+
+.masonry-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* Smaller border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  display: flex;
+  flex-direction: column;
+}
+
+.masonry-item:hover {
+  transform: translateY(-5px); /* Smaller lift effect on hover */
+}
+
+.masonry-item img {
+  width: 270px;
+  height: 150px; /* Fixed height for images */
+  object-fit: cover; /* Ensure images cover the area */
+  border-radius: 8px 8px 0 0; /* Rounded corners for the top */
+}
+
+.masonry-content {
+  padding: 10px; /* Smaller padding */
+  background: white; /* White background for content */
+  border-radius: 0 0 8px 8px; /* Rounded corners for the bottom */
+  flex-grow: 1;
+}
+
+.masonry-content h3 {
+  font-size: 1.2rem; /* Smaller font size for headings */
+  margin-bottom: 5px; /* Smaller margin */
+  color: #333; /* Dark text for headings */
+}
+
+.masonry-content p {
+  font-size: 0.9rem; /* Smaller font size for descriptions */
+  color: #666; /* Light text for descriptions */
+}
+
+.masonry-content pre {
+  font-size: 0.9rem; /* Smaller font size for descriptions */
+  color: #666; /* Light text for descriptions */
+}
+
+.country h4 {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 2rem;
+}
+
+.country_button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: #007bff;
+  cursor: pointer;
+}
+
+.country_button:hover {
+  background-color:#ffffff;
+  color:#000000;
+  border: 2px solid #007bff;
+  box-shadow: 5px 5px 15px rgb(21, 6, 240);
+}
+
+/* parallax content */
+.country_desc {
+  margin-top:10px;
+  margin-left: 20px;
+}
+
+.country_desc h4{
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.parallax-section {
+  position:relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  text-align: left; /* Left-align text inside the box */
+  color: white;
+  background-color: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 88%; /* Limit width of content box */
+  opacity: 0;
+  transform: translateX(-50px); /* Slide in from left */
+  transition: all 0.5s ease;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-size: cover;
+  background-position: center;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.parallax-section.active .parallax-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.parallax-section.active .parallax-bg {
+  transform: translateY(0);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.country_desc_button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: #007bff;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.country_desc_button:hover {
+  background-color:#ffffff;
+  color:#000000;
+  border: 2px solid #007bff;
+  box-shadow: 5px 5px 15px rgb(21, 6, 240);
+}
+
+#m1 {
+  background-image: url("https://storymy.news.blog/wp-content/uploads/2019/12/str2_mingafamosa_1_mingteoh.jpg");
+}
+
+#m2 {
+  background-image: url("https://www.holidify.com/images/cmsuploads/compressed/jonkerover_20190622171829.jpg")
+}
+
+#m3 {
+  background-image: url("https://www.gomelaka.my/site/wp-content/uploads/2014/09/st-paul-hill-exterior-a.jpg")
+}
+
+#p1 {
+  background-image: url("https://www.thenationalnews.com/resizer/l8U4vSCpU8xn-SyDAEUOFPXOvlw=/arc-photo-thenational/eu-central-1-prod/public/IY65RHNVFHCS7CSBKPKSDZLIPA.jpg");
+}
+
+#p2 {
+  background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/fb/10/15/the-habitat-penang-hill.jpg")
+}
+
+#p3 {
+  background-image: url("https://penangfoodie.sgp1.digitaloceanspaces.com/2020/01/16462892_1342027279193646_2307712439106280032_o.jpg")
+}
+
+#kl1 {
+  background-image: url("https://img.veenaworld.com/wp-content/uploads/2021/09/Petronas-Twin-Tower-Malaysia-Timing-Location-and-Things-to-Do-scaled.jpg");
+}
+
+#kl2 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/8f/Batu_Caves_stairs_2022-05.jpg")
+}
+
+#kl3 {
+  background-image: url("https://malaxi.com/kuala_lumpur/images/merdeka_square06.jpg")
+}
+
+#langkawi1 {
+  background-image: url("https://www.visitlangkawi.org/wp-content/uploads/2017/05/Langkawi-Sky-Bridge.jpg");
+}
+
+#langkawi2 {
+  background-image: url("https://media1.thrillophilia.com/filestore/p222yt7l1l8dui2xgjky16to2e56_1463660526_8977355156_a32d09ed07_b.jpg")
+}
+
+#langkawi3 {
+  background-image: url("https://www.tcer.my/wp-content/uploads/2020/11/Pantai-Cenang.jpg")
+}
+
+#ipoh1 {
+  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg743qJ7tyUrEYsOVY-swCCO8AKBjCczsjfqPRYfGaZluGAcuhA0WqDklaA7AV1lTUsWax5QU-Dy-h8LCjihlNV0Nz9zyTTnBBUPvItPgq8G5GIKYDZD-0vXi0JS0AGuLns_LoNlFA_F-OtTsi_jY2Jse6-qwELnXEsBG1wXVTDpk0EzhyoD44/s1600/kellie-castle-batu-gajah-perak-01.jpg");
+}
+
+#ipoh2 {
+  background-image: url("https://findingbeyond.com/app/uploads/2017/03/visit-ipoh-old-town-perak-malaysia-18.jpg")
+}
+
+#ipoh3 {
+  background-image: url("https://www.juniechen.com/wp-content/uploads/2014/12/blog-gua-tempurung-02.jpg")
+}
+
+#kuching1 {
+  background-image: url("https://outbackventure.com/wp-content/uploads/2017/12/scv0104-1.jpg");
+}
+
+#kuching2 {
+  background-image: url("https://xydiarytravel.com/wp-content/uploads/2024/06/Semenggoh-Wildlife-Center.jpg")
+}
+
+#kuching3 {
+  background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/41/70/04/the-view-of-the-sarawak.jpg")
 }

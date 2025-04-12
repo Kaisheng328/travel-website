@@ -1,10 +1,9 @@
-
 /* ---------------------- Activities List ---------------------- */
 const activities = [
     {
         name: "Petronas Twin Tower",
         category: ["City Excitement", "Restaurant"],
-        description: "The Petronas Twin Towers in Kuala Lumpur, completed in 1998, are 452 meters tall and were the world’s tallest buildings until 2004.",
+        description: "The Petronas Twin Towers in Kuala Lumpur, completed in 1998, are 452 meters tall and were the world's tallest buildings until 2004.",
         imageUrl: "https://img.veenaworld.com/wp-content/uploads/2021/09/Petronas-Twin-Tower-Malaysia-Timing-Location-and-Things-to-Do-scaled.jpg",
         ratings: 4.8,
         favorite: false,
@@ -134,7 +133,7 @@ const activities = [
         imageUrl: "https://2.bp.blogspot.com/-G7MYntNYMd4/WYBIi9rJxUI/AAAAAAAAal4/WRWMD3E1PpYAxxLZtF5DC8lHW-7I6x-bgCLcBGAs/s1600/Klcc-Park-40607.jpg",
         ratings: 1.9,
         favorite: false,
-        longDescription: "KLCC Park is a well-designed urban green space situated at the base of the Petronas Twin Towers in Kuala Lumpur, Malaysia. Spanning 50 acres, the park offers a serene retreat from the bustling city with its lush gardens, walking paths, and expansive lawns. Central to the park is a large artificial lake that features a musical fountain, providing a stunning water display set to music, especially in the evenings. The park includes various amenities such as a children’s playground, a jogging track, and shaded areas for relaxation. Visitors can also enjoy the park's meticulously landscaped gardens, which include a tropical rainforest area and a wide variety of plants and flowers. KLCC Park serves as a popular recreational spot for both locals and tourists, offering picturesque views of the iconic Petronas Twin Towers and a peaceful environment for leisurely strolls and outdoor activities.",
+        longDescription: "KLCC Park is a well-designed urban green space situated at the base of the Petronas Twin Towers in Kuala Lumpur, Malaysia. Spanning 50 acres, the park offers a serene retreat from the bustling city with its lush gardens, walking paths, and expansive lawns. Central to the park is a large artificial lake that features a musical fountain, providing a stunning water display set to music, especially in the evenings. The park includes various amenities such as a children's playground, a jogging track, and shaded areas for relaxation. Visitors can also enjoy the park's meticulously landscaped gardens, which include a tropical rainforest area and a wide variety of plants and flowers. KLCC Park serves as a popular recreational spot for both locals and tourists, offering picturesque views of the iconic Petronas Twin Towers and a peaceful environment for leisurely strolls and outdoor activities.",
         OperatingHour: {
             0: '09:00-17:00', 
             1: '09:00-17:00', 
@@ -154,40 +153,49 @@ const activities = [
     }
 ];
 
-// Check if activities are already stored
 if (!localStorage.getItem('activities')) {
     localStorage.setItem('activities', JSON.stringify(activities));
 }
 
-// Loading Activities from Local Storage and Displaying Them
 const storedActivities = JSON.parse(localStorage.getItem('activities'));
 
-// Function to create activity card HTML
 function createActivityCard(activity) {
-    const categories = activity.category.join(" • ");
+    const categoriesHTML = activity.category.map(cat => 
+        `<span class="category-badge category-${cat.toLowerCase().replace(/\s+/g, '-')}">${cat}</span>`
+    ).join('');
+    
     const heartIconClass = activity.favorite ? 'bi-heart-fill' : 'bi-heart';
     const selectedClass = activity.favorite ? 'selected' : '';
 
     return `
         <div class="activity-card">
-            <span class="love-icon ${selectedClass}">
-                <i class="bi ${heartIconClass}"></i> 
-            </span>
-            <img src="${activity.imageUrl}" alt="${activity.name}" class="activity-image">
-            <div class="activity-details">
-                <h3 class="activity-name">${activity.name}</h3>
-                <p class="activity-category">${categories}</p>
-                <p class="activity-description">${activity.description}</p>
-                <div class="activity-ratings">
-                    <span class="ratings">⭐</span>${activity.ratings}
-                    <a href="detailPage.html?name=${encodeURIComponent(activity.name)}" class="explore-button">Explore</a>
+            <div class="activity-card-inner">
+                <div class="activity-image-container">
+                    <img src="${activity.imageUrl}" alt="${activity.name}" class="activity-image">
+                    <div class="activity-overlay">
+                        <a href="detailPage.html?name=${encodeURIComponent(activity.name)}" class="overlay-explore-button">
+                            View Details
+                        </a>
+                    </div>
+                    <span class="love-icon ${selectedClass}">
+                        <i class="bi ${heartIconClass}"></i> 
+                    </span>
+                    <div class="activity-category-badges">
+                        ${categoriesHTML}
+                    </div>
+                </div>
+                <div class="activity-details">
+                    <h3 class="activity-name">${activity.name}</h3>
+                    <p class="activity-description">${activity.description}</p>
+                    <div class="activity-footer">
+                        <div class="rating-number">⭐ ${activity.ratings}</div>
+                    </div>
                 </div>
             </div>
         </div>
     `;
 }
 
-// Function to display activities on the page
 function displayActivities(activities) {
     const activitiesSection = document.querySelector('.activities-section');
     activitiesSection.innerHTML = '<h4>Activities</h4>'; 
@@ -203,7 +211,7 @@ function displayActivities(activities) {
 // Function to attach event listeners to love icons
 function attachLoveIconListeners() {
     document.querySelectorAll('.love-icon').forEach(icon => {
-        const activityName = icon.parentElement.querySelector('.activity-name').textContent;
+        const activityName = icon.closest('.activity-card').querySelector('.activity-name').textContent;
         const storedActivities = JSON.parse(localStorage.getItem('activities'));
         const activity = storedActivities.find(activity => activity.name === activityName);
         
@@ -217,7 +225,6 @@ function attachLoveIconListeners() {
             icon.querySelector('i').classList.remove('bi-heart-fill');
         }
 
-
         icon.addEventListener('click', function(event) {
             // Check if the user is logged in by checking if 'username' exists in localStorage
             const username = localStorage.getItem('username');
@@ -228,7 +235,6 @@ function attachLoveIconListeners() {
                 return;
             }
 
-            // Toggle the favorite status
             icon.classList.toggle('selected');
             icon.querySelector('i').classList.toggle('bi-heart-fill');
             icon.querySelector('i').classList.toggle('bi-heart');
@@ -241,8 +247,24 @@ function attachLoveIconListeners() {
     });
 }
 
+function handleCategoryClick() {
+    this.classList.toggle('active');
+    applyFilters();
+}
+
+function attachCategoryListeners() {
+    document.querySelectorAll('.category-tag').forEach(function(tag) {
+        // First remove any existing click listeners to prevent duplicates
+        tag.removeEventListener('click', handleCategoryClick);
+        // Then add the click listener
+        tag.addEventListener('click', handleCategoryClick);
+    });
+}
+
 function applyFilters() {
-    const selectedCategories = Array.from(document.querySelectorAll('#categoryFilter .btn.chip.active')).map(chip => chip.textContent.trim());
+    const selectedCategories = Array.from(document.querySelectorAll('.category-tag.active')).map(tag => 
+        tag.querySelector('.tag-text').textContent.trim());
+    
     const selectedRating = document.querySelector('input[name="travelerRating"]:checked')?.value;
 
     let filteredActivities = storedActivities;
@@ -279,35 +301,17 @@ function handleIntersection(entries, observer) {
         }
     });
 }
+
 const observer = new IntersectionObserver(handleIntersection, {
     threshold: 0.05 
-});
-
-// Observe each activity card
-document.querySelectorAll('.activity-card').forEach(card => {
-    observer.observe(card);
-});
-
-// Initial loading of activities
-displayActivities(storedActivities);
-
-/* ---------------------- Other button/icon function ---------------------- */
-
-document.querySelectorAll('.btn.chip').forEach(function(chip) {
-    chip.addEventListener('click', function() {
-        chip.classList.toggle('active');
-        applyFilters();  
-    });
 });
 
 document.querySelectorAll('input[name="travelerRating"]').forEach(function(radio) {
     radio.addEventListener('change', applyFilters); 
 });
 
-// Get the back to top button
 const backToTopButton = document.getElementById("backToTop");
 
-// When the user scrolls down 100px from the top of the document, show the button
 window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         backToTopButton.style.display = "block";
@@ -316,36 +320,32 @@ window.onscroll = function() {
     }
 };
 
-// When the user clicks on the button, scroll to the top of the document
 backToTopButton.addEventListener("click", function() {
     window.scrollTo({
         top: 0,
         behavior: "smooth" // Smooth scroll to top
     });
 });
-//activity card animation
-document.addEventListener('DOMContentLoaded', function() {
 
+document.addEventListener('DOMContentLoaded', function() {
+    displayActivities(storedActivities);
+    
     document.querySelectorAll('.activity-card').forEach(card => {
         observer.observe(card);
     });
-});
 
-//Redirect to selected filter using parameter
-document.addEventListener('DOMContentLoaded', () => {
-    // Get the query parameter from the URL
+    attachCategoryListeners();
+    
     const urlParams = new URLSearchParams(window.location.search);
     const filterCategory = urlParams.get('category');
 
     if (filterCategory) {
-        // Find the button with the specified category and simulate a click
-        const filterButton = document.querySelector(`button[data-category="${filterCategory}"]`);
+        const filterButton = document.querySelector(`.category-tag[data-category="${filterCategory}"]`);
         
         if (filterButton) {
-            console.log("Filter button exists with data-category:", filterButton.getAttribute('data-category'));
-            filterButton.click(); // Simulate a click to apply the filter
-        } else {
-            console.log("No button found with category:", filterCategory);
+            // Directly add the active class instead of simulating a click
+            filterButton.classList.add('active');
+            applyFilters();
         }
     }
 });

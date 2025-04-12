@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/97385884-5ac7-47a1-8700-472b38c0c10b/resourceGroups/appsvc_windows_southeastasia/providers/Microsoft.Web/sites/GroupKai",
+    "appService.deploySubpath": "."
+}

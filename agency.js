@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section');
 
     // Show header content with animation after page load
-    setTimeout(() => {
-        headerContent.classList.add('visible');
-    }, 500);
+   
 
     // Smooth scroll function for the scroll down arrow and navigation links
     function smoothScroll(target) {
@@ -66,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const backToTopButton = document.getElementById("backToTop");
 
 // When the user scrolls down 100px from the top of the document, show the button
-window.onscroll = function() {
+window.onscroll = function () {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         backToTopButton.style.display = "block";
     } else {
@@ -75,10 +73,23 @@ window.onscroll = function() {
 };
 
 // When the user clicks on the button, scroll to the top of the document
-backToTopButton.addEventListener("click", function() {
+backToTopButton.addEventListener("click", function () {
     window.scrollTo({
         top: 0,
         behavior: "smooth" // Smooth scroll to top
     });
+});
+
+
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_5tp7dnp', 'template_xro73r3', this)
+        .then(function () {
+            alert('Message sent successfully!');
+            document.getElementById('contact-form').reset();
+        }, function (error) {
+            alert('Failed to send message. Error: ' + JSON.stringify(error));
+        });
 });
 
